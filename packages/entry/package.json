@@ -1,18 +1,22 @@
 {
   "name": "@nimbos/entry",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0+79ae99e",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nimbos/core": "^0.1.0",
-    "@nimbos/styles": "^0.1.0"
+    "@nimbos/core": "^0.1.1-alpha.0+79ae99e",
+    "@nimbos/styles": "^0.1.1-alpha.0+79ae99e"
   },
   "peerDependencies": {
     "react": "^16.0.0"
-  }
+  },
+  "gitHead": "79ae99e12340793c600c6cf117f73a2f18da2922"
 }

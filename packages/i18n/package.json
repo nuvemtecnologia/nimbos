@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/i18n",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0+79ae99e",
   "description": "Pacote de i18n para o projeto nimbos",
   "author": "castrolol <lu4n.k4str0@gmail.com>",
   "homepage": "https://github.com/JossanPetrenko/spa-framework#readme",
@@ -33,5 +33,6 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "jest": "^23.6.0"
-  }
+  },
+  "gitHead": "79ae99e12340793c600c6cf117f73a2f18da2922"
 }

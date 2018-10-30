@@ -1,14 +1,18 @@
 {
   "name": "@nimbos/http",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0+79ae99e",
   "description": "Pacote com solução de HTTP para o projeto nimbos",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0"
-  }
+  },
+  "gitHead": "79ae99e12340793c600c6cf117f73a2f18da2922"
 }

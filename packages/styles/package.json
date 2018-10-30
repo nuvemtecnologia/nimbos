@@ -1,15 +1,19 @@
 {
   "name": "@nimbos/styles",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0+79ae99e",
   "description": "A styles package for @nimbos project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
     "normalize-scss": "^7.0.1"
-  }
+  },
+  "gitHead": "79ae99e12340793c600c6cf117f73a2f18da2922"
 }
