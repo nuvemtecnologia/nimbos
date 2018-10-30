@@ -1,11 +1,192 @@
 # `@nimbos/i18n`
 
-> TODO: description
+# **Internationalization**
 
-## Usage
+A função de internacionalização permite salvar as _strings_
+do sistema de maneira centralizada e manutenivel alem de permitir
+a mudança de linguagem em _runtime_.
 
+## Uso Básico
+
+Após regisdtrar um conjunto de chaves
+
+```js
+import t from '@nimbos/i18n';
+
+//registrando
+t.register('pt-BR', {
+  hello_world: 'Olá Mundo'
+});
 ```
-const i18n = require('@nimbos/i18n');
 
-// TODO: DEMONSTRATE API
+O uso pode ser feito da seguinte forma
+
+```js
+import t from '@nimbos/i18n';
+
+const localized = t('hello_world');
+
+console.log(localized); //Olá Mundo
+```
+
+## Váriaveis
+
+Para cenários onde existem váriaveis dentro das mensagem, elas podem ser definidas
+como váriaveis (nomeadas) e parametros (numerados).
+
+Como no exemplo:
+
+```js
+import t from '@nimbos/i18n';
+
+//registrando
+t.register('pt-BR', {
+  hello_world: 'Olá {name}'
+});
+```
+
+O uso pode ser feito da seguinte forma
+
+```js
+import t from '@nimbos/i18n';
+
+const localized = t('hello_world', { name: 'Mundo' });
+
+console.log(localized); //Olá Mundo
+```
+
+## Parametros
+
+Exemplo de uso com parametros:
+
+```js
+import t from '@nimbos/i18n';
+
+//registrando
+t.register('pt-BR', {
+  hello_world: 'Olá {0}' //o nomero é sequencial, {1}, {2}, {3}...
+});
+```
+
+O uso pode ser feito da seguinte forma
+
+```js
+import t from '@nimbos/i18n';
+
+let parametro = 'Mundo';
+const localized = t('hello_world', parametro);
+
+console.log(localized); //Olá Mundo
+```
+
+> Esse modo é menos legivel e pode gerar confusões, use com cautela
+
+## Contagem Inteligente
+
+Para cenários onde temos contagem de elementos, podemos usar
+a variavel ou parametro para contagem
+
+Exemplo:
+
+```js
+import t from '@nimbos/i18n';
+
+//registrando
+t.register('pt-BR', {
+  items_count: ['Sem Items!', 'Apenas um Item!', 'São {count} Items!']
+});
+```
+
+O uso pode ser feito da seguinte forma
+
+```js
+import t from '@nimbos/i18n';
+
+const localizedNone = t('hello_world', { count: 0 });
+const localizedOne = t('hello_world', { count: 1 });
+const localizedMany = t('hello_world', { count: 2 });
+
+console.log(localizedNone); //Sem Items!
+console.log(localizedOne); //Apenas um Item!
+console.log(localizedMany); //São 2 Items!
+```
+
+> O número de items acompanha os items do array, se existirem 4 items, por exemplo,
+> será o primeiro para **0** o segundo para **1** o terceiro para **2** e o quarto para todos os outros
+> O mesmo ocorreria para **2** itens, o primeiro para **0** e o segundo para todos os outros
+
+A contagem inteligente funciona para as props com os seguintes nomes:
+
+- **count**
+- **number**
+- **size**
+- **length**
+- **items**
+
+Ou para o primeiro item de um _array_
+
+## Mudança de linguagem
+
+Exemplo de uso com varios idiomas:
+
+```js
+import t from '@nimbos/i18n';
+
+//registrando
+t.register('pt-BR', {
+  hello_world: 'Olá Mundo' //o nomero é sequencial, {1}, {2}, {3}...
+});
+//registrando
+t.register('en-US', {
+  hello_world: 'Hello World' //o nomero é sequencial, {1}, {2}, {3}...
+});
+```
+
+O uso pode ser feito da seguinte forma
+
+```js
+import t from '@nimbos/i18n';
+
+let parametro = 'Mundo';
+const localizedPTBR = t('hello_world');
+t.lang('en-US');
+const localizedENUS = t('hello_world');
+
+console.log(localizedPTBR); //Olá Mundo
+console.log(localizedENUS); //Hello World
+```
+
+## Exemplo no React
+
+Pode ser usado como função:
+
+```jsx
+import t from '@nimbos/i18n'
+
+
+<div>
+    <h1>{t`view.title`}</h1>
+    <p>{t('view.present', { name: user.name, email: user.email })}</p>
+    <span>{t('statistics.online_users', onlineUsers)}</span>
+</div>
+```
+
+Ou como componente:
+
+```jsx
+import {T} from '@nimbos/i18n'
+// ou
+//import {I18n} from '@nimbos/i18n'
+
+<div>
+    <h1><T>view.title</T></h1>
+    <p>
+        <T
+            name={user.name}
+            email={user.email} >
+            view.present
+        </T>
+    </p>
+    <span><T params={[onlineUsers]}>statistics.online_users</T> </span>
+</div>
 ```
