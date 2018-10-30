@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/core",
-  "version": "0.1.1-alpha.0+79ae99e",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {

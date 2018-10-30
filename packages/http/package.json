@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/http",
-  "version": "0.1.1-alpha.0+79ae99e",
+  "version": "0.1.1",
   "description": "Pacote com solução de HTTP para o projeto nimbos",
   "main": "index.js",
   "scripts": {
