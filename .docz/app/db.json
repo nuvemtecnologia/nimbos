@@ -7,6 +7,7 @@
     "ordering": "descending",
     "repository": null,
     "native": false,
+    "codeSandbox": true,
     "plugins": [
       {},
       {}
@@ -15,14 +16,14 @@
     "base": "/nimbos/"
   },
   "entries": {
-    "packages/@nimbos/styles/readme.mdx": {
+    "packages/styles/readme.mdx": {
       "name": "nimbos/styles",
       "menu": "Api",
-      "id": "3f89d77eaba4e839dccf4dae19b65f11",
-      "filepath": "packages/@nimbos/styles/readme.mdx",
+      "id": "5d5080d93c5332140735d3a37aec81c8",
+      "filepath": "packages/styles/readme.mdx",
       "link": null,
-      "slug": "packages-nimbos-styles-readme",
-      "route": "/packages-nimbos-styles-readme",
+      "slug": "packages-styles-readme",
+      "route": "/packages-styles-readme",
       "order": 0,
       "headings": [
         {
@@ -32,14 +33,14 @@
         }
       ]
     },
-    "packages/@nimbos/button/docs/button.mdx": {
+    "packages/button/docs/button.mdx": {
       "name": "nimbos/button",
       "menu": "Components",
-      "id": "3feb8df5d427d67a335062efebbaf6ae",
-      "filepath": "packages/@nimbos/button/docs/button.mdx",
+      "id": "f72368a6e7260e883d54d7a8fbfbbef7",
+      "filepath": "packages/button/docs/button.mdx",
       "link": null,
-      "slug": "packages-nimbos-button-docs-button",
-      "route": "/packages-nimbos-button-docs-button",
+      "slug": "packages-button-docs-button",
+      "route": "/packages-button-docs-button",
       "order": 0,
       "headings": [
         {
@@ -104,14 +105,14 @@
         }
       ]
     },
-    "packages/@nimbos/entry/docs/entry.mdx": {
+    "packages/entry/docs/entry.mdx": {
       "name": "nimbos/entry",
       "menu": "Components",
-      "id": "ee55ebd2ed22175f21bc9a6d61a824a5",
-      "filepath": "packages/@nimbos/entry/docs/entry.mdx",
+      "id": "4f3f53e835710db524b1193a99d4aae9",
+      "filepath": "packages/entry/docs/entry.mdx",
       "link": null,
-      "slug": "packages-nimbos-entry-docs-entry",
-      "route": "/packages-nimbos-entry-docs-entry",
+      "slug": "packages-entry-docs-entry",
+      "route": "/packages-entry-docs-entry",
       "order": 0,
       "headings": [
         {
@@ -151,14 +152,14 @@
         }
       ]
     },
-    "packages/@nimbos/entry/docs/label.mdx": {
+    "packages/entry/docs/label.mdx": {
       "name": "nimbos/label",
       "menu": "Components",
-      "id": "3a8bfbbe9c46f7fb1c8174898785e58e",
-      "filepath": "packages/@nimbos/entry/docs/label.mdx",
+      "id": "5ba2945efa58778a35217488817a42e5",
+      "filepath": "packages/entry/docs/label.mdx",
       "link": null,
-      "slug": "packages-nimbos-entry-docs-label",
-      "route": "/packages-nimbos-entry-docs-label",
+      "slug": "packages-entry-docs-label",
+      "route": "/packages-entry-docs-label",
       "order": 0,
       "headings": [
         {
@@ -178,14 +179,14 @@
         }
       ]
     },
-    "packages/@nimbos/i18n/docs/i18n.mdx": {
+    "packages/i18n/docs/i18n.mdx": {
       "name": "nimbos/i18n",
       "menu": "Api",
-      "id": "9697e709e5f220f9a270b27cd4352bae",
-      "filepath": "packages/@nimbos/i18n/docs/i18n.mdx",
+      "id": "5bf0108bd718ec30628d593984606145",
+      "filepath": "packages/i18n/docs/i18n.mdx",
       "link": null,
-      "slug": "packages-nimbos-i18n-docs-i18n",
-      "route": "/packages-nimbos-i18n-docs-i18n",
+      "slug": "packages-i18n-docs-i18n",
+      "route": "/packages-i18n-docs-i18n",
       "order": 0,
       "headings": [
         {
@@ -225,14 +226,14 @@
         }
       ]
     },
-    "packages/@nimbos/layout/docs/layout.mdx": {
+    "packages/layout/docs/layout.mdx": {
       "name": "nimbos/layout",
       "menu": "Components",
-      "id": "14be164c520ad899ef0edce4cb227f47",
-      "filepath": "packages/@nimbos/layout/docs/layout.mdx",
+      "id": "99e56803ba0de2406bfc7e9d1460c163",
+      "filepath": "packages/layout/docs/layout.mdx",
       "link": null,
-      "slug": "packages-nimbos-layout-docs-layout",
-      "route": "/packages-nimbos-layout-docs-layout",
+      "slug": "packages-layout-docs-layout",
+      "route": "/packages-layout-docs-layout",
       "order": 0,
       "headings": [
         {
