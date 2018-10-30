@@ -1,0 +1,64 @@
+@mixin button(
+  $color,
+  $color-icon-background,
+  $color-hover,
+  $border,
+  $color-font,
+  $color-ripple: lighten($color, 20%),
+  $color-font-outlined: $color 
+) {
+	border: $border;
+	background-color: $color;
+	color: $color-font;
+	overflow: hidden;
+
+	@include ripple($color, $color-gray-light);
+
+	&.n-btn-outlined {
+		border: $border;
+		background-color: transparent;
+		color: $color-font-outlined;
+		&:not(:disabled) {
+			@include ripple($color-hover, $color-ripple);
+		}
+
+		&:disabled {
+			color: $color-black;
+		}
+
+		span {
+			color: $color-font;
+		}
+	}
+	.n-btn-icon-element {
+		background: transparent;
+  }
+  
+ 
+
+	&.with-icon-background .n-btn-icon-element {
+		background: $color-icon-background;
+	}
+	&.n-btn-flat {
+		border: $btn-border-flat;
+		background-color: transparent;
+		color: $color-font-outlined;
+		&:not(:disabled) {
+			@include ripple($color-hover, $color-ripple);
+		}
+
+		&:disabled {
+			color: $color-black;
+		}
+	}
+	&.n-btn-outlined {
+		span {
+			color: $color-font-outlined;
+		}
+  }
+  
+  &.with-icon-background.n-btn-childrenless { 
+    background: $color-icon-background;
+
+  }
+}

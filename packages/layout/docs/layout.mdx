@@ -1,0 +1,49 @@
+---
+name: nimbos/layout
+menu: Components
+---
+
+import '../../styles/scss/theme.scss';
+import t from '../../i18n';
+
+# **Layout**
+
+import { PropsTable, Playground } from 'docz'
+import Layout from '../src';
+import styled from 'styled-components';
+
+
+
+<PropsTable of={Layout} />
+
+```jsx
+
+    import Layout, { SideMenu, Topbar } from '@nimbos/layout';
+
+    <Layout>
+        <Layout.Topbar>
+            <Topbar>
+                <Topbar.Left> 
+                    I`m a left content
+                </Topbar.Left>
+            </Topbar>
+        </Layout.Topbar>
+        <Layout.Sidebar>
+            <SideMenu>
+                    <SideMenu 
+                        onMenuToggle={this.handleToggleMenu}
+                        onPinToggle={this.handlePinMenu}
+                        onOverlayClick={this.handleOverlayClick}
+                        open={menuOpen}
+                        pinned={pinned}
+                    >
+					<SideMenu.Header iconMenu="fa fa-bars" iconPin="fas fa-thumbtack" />
+					<SideMenu.List onSelect={this.handleMenuSelected} items={menuItems} />
+				</SideMenu>
+            </SideMenu>
+        </Layout.Sidebar>
+        <Layout.Container>
+            I'm a Content
+        </Layout.Container>
+    </Layout>
+```

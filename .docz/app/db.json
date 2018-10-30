@@ -1,0 +1,246 @@
+{
+  "config": {
+    "title": "Nimbos",
+    "description": "Nimbos - SPA Framework",
+    "themeConfig": {},
+    "menu": [],
+    "ordering": "descending",
+    "repository": null,
+    "native": false,
+    "plugins": [
+      {},
+      {}
+    ],
+    "indexHtml": ".docz/index_template.html",
+    "base": "/nimbos/"
+  },
+  "entries": {
+    "packages/@nimbos/styles/readme.mdx": {
+      "name": "nimbos/styles",
+      "menu": "Api",
+      "id": "3f89d77eaba4e839dccf4dae19b65f11",
+      "filepath": "packages/@nimbos/styles/readme.mdx",
+      "link": null,
+      "slug": "packages-nimbos-styles-readme",
+      "route": "/packages-nimbos-styles-readme",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 2,
+          "slug": "nimbosstyles",
+          "value": "@nimbos /styles"
+        }
+      ]
+    },
+    "packages/@nimbos/button/docs/button.mdx": {
+      "name": "nimbos/button",
+      "menu": "Components",
+      "id": "3feb8df5d427d67a335062efebbaf6ae",
+      "filepath": "packages/@nimbos/button/docs/button.mdx",
+      "link": null,
+      "slug": "packages-nimbos-button-docs-button",
+      "route": "/packages-nimbos-button-docs-button",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "button",
+          "value": "Button"
+        },
+        {
+          "depth": 2,
+          "slug": "padrão",
+          "value": "Padrão"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos",
+          "value": "Exemplos"
+        },
+        {
+          "depth": 2,
+          "slug": "enfatizado",
+          "value": "Enfatizado"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-1",
+          "value": "Exemplos"
+        },
+        {
+          "depth": 2,
+          "slug": "intenções",
+          "value": "Intenções"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-2",
+          "value": "Exemplos"
+        },
+        {
+          "depth": 2,
+          "slug": "variações",
+          "value": "Variações"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos---outlined",
+          "value": "Exemplos - Outlined"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos---flat",
+          "value": "Exemplos - Flat"
+        },
+        {
+          "depth": 2,
+          "slug": "Ícone",
+          "value": "Ícone"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-font-awesome-icons--material-desing-icons",
+          "value": "Exemplos (Font Awesome Icons / Material Desing Icons)"
+        }
+      ]
+    },
+    "packages/@nimbos/entry/docs/entry.mdx": {
+      "name": "nimbos/entry",
+      "menu": "Components",
+      "id": "ee55ebd2ed22175f21bc9a6d61a824a5",
+      "filepath": "packages/@nimbos/entry/docs/entry.mdx",
+      "link": null,
+      "slug": "packages-nimbos-entry-docs-entry",
+      "route": "/packages-nimbos-entry-docs-entry",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "entry",
+          "value": "Entry"
+        },
+        {
+          "depth": 2,
+          "slug": "text-entry",
+          "value": "Text Entry"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplo-simples",
+          "value": "Exemplo Simples"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-label",
+          "value": "Exemplos Label"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-disabled",
+          "value": "Exemplos Disabled"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-width",
+          "value": "Exemplos Width"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos-icon",
+          "value": "Exemplos Icon"
+        }
+      ]
+    },
+    "packages/@nimbos/entry/docs/label.mdx": {
+      "name": "nimbos/label",
+      "menu": "Components",
+      "id": "3a8bfbbe9c46f7fb1c8174898785e58e",
+      "filepath": "packages/@nimbos/entry/docs/label.mdx",
+      "link": null,
+      "slug": "packages-nimbos-entry-docs-label",
+      "route": "/packages-nimbos-entry-docs-label",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "entry-label",
+          "value": "Entry Label"
+        },
+        {
+          "depth": 2,
+          "slug": "label",
+          "value": "Label"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos",
+          "value": "Exemplos"
+        }
+      ]
+    },
+    "packages/@nimbos/i18n/docs/i18n.mdx": {
+      "name": "nimbos/i18n",
+      "menu": "Api",
+      "id": "9697e709e5f220f9a270b27cd4352bae",
+      "filepath": "packages/@nimbos/i18n/docs/i18n.mdx",
+      "link": null,
+      "slug": "packages-nimbos-i18n-docs-i18n",
+      "route": "/packages-nimbos-i18n-docs-i18n",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "internationalization",
+          "value": "Internationalization"
+        },
+        {
+          "depth": 2,
+          "slug": "uso-básico",
+          "value": "Uso Básico"
+        },
+        {
+          "depth": 2,
+          "slug": "váriaveis",
+          "value": "Váriaveis"
+        },
+        {
+          "depth": 2,
+          "slug": "parametros",
+          "value": "Parametros"
+        },
+        {
+          "depth": 2,
+          "slug": "contagem-inteligente",
+          "value": "Contagem Inteligente"
+        },
+        {
+          "depth": 2,
+          "slug": "mudança-de-linguagem",
+          "value": "Mudança de linguagem"
+        },
+        {
+          "depth": 2,
+          "slug": "exemplo-no-react",
+          "value": "Exemplo no React"
+        }
+      ]
+    },
+    "packages/@nimbos/layout/docs/layout.mdx": {
+      "name": "nimbos/layout",
+      "menu": "Components",
+      "id": "14be164c520ad899ef0edce4cb227f47",
+      "filepath": "packages/@nimbos/layout/docs/layout.mdx",
+      "link": null,
+      "slug": "packages-nimbos-layout-docs-layout",
+      "route": "/packages-nimbos-layout-docs-layout",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "layout",
+          "value": "Layout"
+        }
+      ]
+    }
+  }
+}

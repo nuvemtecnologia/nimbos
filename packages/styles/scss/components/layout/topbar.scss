@@ -1,0 +1,38 @@
+.n-topbar {
+    height: $layout-topbar-height;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.n-topbar-divider {
+    height: $layout-topbar-height;
+    width: 1px;
+    border-left: 1px solid $color-gray-dark;
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.n-topbar-left {
+    padding: 0 8px;
+    display: flex;
+    height: $layout-topbar-height;
+    flex: 1;
+}
+
+.n-topbar-right {
+    vertical-align: bottom;
+    padding: 0 8px;
+    height: $layout-topbar-height;
+    display: flex;
+    text-align: right;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.n-topbar {
+    h1 {
+        display: inline-block;
+    }
+}

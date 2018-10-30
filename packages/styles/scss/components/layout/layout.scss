@@ -1,0 +1,40 @@
+@import './_variables.scss';
+@import './sidemenu.scss';
+@import './sidemenu-inner.scss';
+@import './topbar.scss';
+.n-layout-topbar {
+    height: $layout-topbar-height;
+    position: fixed;
+    top: 0;
+    left: 56px;
+    right: 0;
+    box-shadow: $layout-sidebar-shadow;
+}
+
+.n-layout-sidebar {
+    background: $layout-sidebar-background;
+    width: $layout-sidebar-width;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.n-layout-container {
+    background: yellow;
+    width: calc(100% - #{$layout-sidebar-width});
+    margin-left: $layout-sidebar-width;
+    margin-top: $layout-topbar-height;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+.n-layout-sidebar-expanded {
+    .n-layout-sidebar {
+        width: $layout-sidebar-open-width;
+    }
+    .n-layout-container {
+        width: calc(100% - #{$layout-sidebar-open-width});
+        margin-left: $layout-sidebar-open-width;
+    }
+}

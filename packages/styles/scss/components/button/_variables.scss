@@ -1,0 +1,49 @@
+//default
+$btn-border-radius: $border-radius-md !default;
+$btn-icon-border-radius: $border-radius-md !default;
+$btn-border: $border-md solid $color-gray-dark !default;
+
+$btn-color-background: $color-gray;
+$btn-content: $content-md !default;
+
+$btn-childrenless-padding: 0 $padding-md !default;
+
+$btn-size: 2.44rem;
+$btn-icon-height: 2.25rem;
+$btn-icon-width: 2.45rem;
+$btn-line-height: 1.75rem;
+
+$btn-icon-element-padding: 0 $padding-md 0 $padding-md !default;
+
+$btn-icon-padding: $padding-md $padding-xl $padding-md ($padding-xl + $padding-xxl) !default;
+$btn-icon-right-padding: $padding-md ($padding-xl + $padding-xxl) $padding-md $padding-xl !default;
+
+$btn-icon-bg-padding: $padding-md $padding-xl $padding-md ($padding-xl + $btn-icon-width) !default;
+$btn-icon-bg-right-padding: $padding-md ($padding-xl + $btn-icon-width) $padding-md $padding-xl !default;
+
+$btn-padding: $padding-md $padding-xl !default;
+
+//borders
+//primary
+$btn-border-primary: $border-md solid $color-primary !default;
+
+//secondary
+$btn-border-secondary: $border-md solid $color-secondary !default;
+
+//success
+$btn-border-success: $border-md solid $color-success !default;
+
+//danger
+$btn-border-danger: $border-md solid $color-danger !default;
+
+//info
+$btn-border-info: $border-md solid $color-info !default;
+
+//warning
+$btn-border-warning: $border-md solid $color-warning !default;
+
+//flat
+$btn-border-flat: $border-md solid transparent !default;
+
+//letter-spacing
+$btn-letter-spacing: $letter-spacing-md !default;

@@ -1,0 +1,28 @@
+$layout-sidemenu-ease-function: ease-in-out;
+$layout-sidebar-background: $color-blackish;
+$layout-sidebar-inner-background: rgb(235, 235, 235);
+$layout-sidebar-width: 56px;
+$layout-sidebar-open-width: 280px;
+$layout-topbar-height: 56px;
+$layout-container-width: calc(100% - $layout-sidebar-width);
+//sidebar
+$layout-sidebar-header-divider-border: 1px solid $color-white;
+$layout-sidebar-inner-header-divider-border: 1px solid $color-gray-dark;
+$layout-sidebar-header-toggle-color: $color-white;
+$layout-sidebar-header-toggle-width: 36px;
+$layout-sidebar-header-toggle-margin: ($layout-topbar-height - $layout-sidebar-header-toggle-width)/2 ($layout-sidebar-width - $layout-sidebar-header-toggle-width)/2;
+$layout-sidebar-inner-header-title-margin: ($layout-topbar-height - $layout-sidebar-header-toggle-width)/2 0;
+$layout-sidebar-header-divider-margin: 0 0 0 ($layout-topbar-height - $layout-sidebar-header-toggle-width)/2;
+$layout-sidebar-shadow: 1px 0 1px 0 rgba(0, 0, 0, 0.3);
+$layout-sidebar-inner-list-item-padding: 0 0 0 $padding-md;
+$layout-sidebar-inner-list-item-height: 42px;
+//sidebar open
+$layout-sidebar-open-header-toggle-width: $layout-sidebar-open-width - ($layout-sidebar-width - 36px);
+$layout-sidebar-open-header-divider-width: $layout-sidebar-open-width - ($layout-sidebar-width - 36px);
+$layout-sidebar-list-item-color: $color-white;
+$layout-sidebar-list-item-height: $layout-topbar-height;
+$layout-sidebar-list-item-text-padding: 8px;
+//z-index
+$layout-sidebar-z-index: 105;
+$layout-sidebar-inner-z-index: 104;
+$layout-sidebar-overlay-z-index: 100;

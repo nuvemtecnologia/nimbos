@@ -1,0 +1,54 @@
+@import './variables.scss';
+.n-entry-root {
+	font-size: $content-md;
+	display: inline-block;
+	margin-bottom: $margin-sm;
+	padding-right: $margin-xs;
+}
+.n-entry-container {
+	position: relative;
+	&.n-input-icon-left input {
+		padding-left: $padding-xxxl;
+	}
+
+	&.n-input-icon-right input {
+		padding-right: $padding-xxxl;
+	}
+}
+
+.n-entry {
+	padding: $entry-padding;
+	width: $entry-width;
+	border: $entry-border;
+	border-radius: $entry-border-radius;
+	outline: none;
+	letter-spacing: $letter-spacing-md;
+	opacity: 0.7;
+	&:focus {
+		opacity: 1;
+	}
+}
+.n-entry:disabled {
+	cursor: not-allowed;
+	opacity: $opacity-lg;
+	background: $color-gray;
+}
+.n-entry-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	&.left {
+		left: $entry-icon-spacing;
+	}
+	&.right {
+		right: $entry-icon-spacing;
+	}
+
+	&.n-entry-icon-clicable {
+		cursor: pointer;
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@nimbos/button",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nimbos/core": "^0.1.0",
+    "@nimbos/styles": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}

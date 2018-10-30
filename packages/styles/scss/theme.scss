@@ -1,0 +1,11 @@
+@import "_color.scss";
+@import "_dimen.scss";
+@import "_functions.scss";
+//Esse import deve ser ultimo
+@import "_reset.scss";
+@import "./components/components.scss";
+.simulate-body {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
