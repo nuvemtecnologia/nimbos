@@ -1,0 +1,27 @@
+---
+name: nimbos/checkbox
+menu: Components
+---
+
+import '../../styles/scss/theme.scss';
+import t from '../../i18n';
+
+# **Checkbox**
+
+import { PropsTable, Playground } from 'docz'
+import Checkbox from '../src';
+import styled from 'styled-components';
+
+<PropsTable of={Checkbox} />
+
+<Playground>
+
+  <Checkbox />
+
+  <Checkbox disabled />
+
+  <Checkbox text="Texto"/>
+
+  <Checkbox disabled text="Desabilitado"/>
+
+</Playground>
