@@ -4773,7 +4773,7 @@ docz-utils@^0.12.12:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.4.0"
 
-docz@^0.12.12, docz@^0.12.5:
+docz@0.12.12, docz@^0.12.12:
   version "0.12.12"
   resolved "https://registry.yarnpkg.com/docz/-/docz-0.12.12.tgz#ddcc36ab444b05570870b55417859ba91a8130ca"
   dependencies:
