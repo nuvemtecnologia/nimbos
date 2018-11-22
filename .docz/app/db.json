@@ -105,6 +105,23 @@
         }
       ]
     },
+    "packages/checkbox/docs/checkbox.mdx": {
+      "name": "nimbos/checkbox",
+      "menu": "Components",
+      "id": "fc1e03dc134cb295a1faf57c1e8acd35",
+      "filepath": "packages/checkbox/docs/checkbox.mdx",
+      "link": null,
+      "slug": "packages-checkbox-docs-checkbox",
+      "route": "/packages-checkbox-docs-checkbox",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "checkbox",
+          "value": "Checkbox"
+        }
+      ]
+    },
     "packages/entry/docs/entry.mdx": {
       "name": "nimbos/entry",
       "menu": "Components",

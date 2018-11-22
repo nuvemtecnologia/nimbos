@@ -1,110 +1,149 @@
 @import './functions.scss';
 @import './variables.scss';
-
 //default
 .n-btn {
-	outline: none;
-	border-radius: $btn-border-radius;
-	background: $color-gray;
-	color: $color-black;
-	margin-right: $margin-xxs;
-	margin-bottom: $margin-xxs;
-	letter-spacing: $btn-letter-spacing;
-	box-sizing: border-box;
-	cursor: pointer;
-	padding: $btn-padding;
-	position: relative;
-
-	vertical-align: bottom;
-
-	&:focus {
-		opacity: $opacity-md;
-	}
+  outline: none;
+  border-radius: $btn-border-radius;
+  background: $color-gray;
+  color: $color-black;
+  margin-right: $margin-xxs;
+  margin-bottom: $margin-xxs;
+  letter-spacing: $btn-letter-spacing;
+  box-sizing: border-box;
+  cursor: pointer;
+  vertical-align: bottom;
+  &:focus {
+    opacity: $opacity-md;
+  }
 }
+
+.n-btn .n-btn-text-content {
+  padding: $btn-padding;
+  display: inline-block;
+}
+
 .n-btn:disabled {
-	cursor: not-allowed;
-	opacity: $opacity-lg;
+  cursor: not-allowed;
+  opacity: $opacity-lg;
 }
 
 //icon
 .n-btn-icon {
-	padding: $btn-icon-padding;
+  padding: $btn-icon-padding;
 }
 
 .n-btn-icon-right {
-	padding: $btn-icon-right-padding;
+  padding: $btn-icon-right-padding;
 }
 
 :not(.n-btn-childrenless).n-btn-icon.with-icon-background {
-	padding: $btn-icon-bg-padding;
+  padding: $btn-icon-bg-padding;
 }
 
 :not(.n-btn-childrenless).n-btn-icon-right.with-icon-background {
-	padding: $btn-icon-bg-right-padding;
+  padding: $btn-icon-bg-right-padding;
 }
 
 //childrenless
 .n-btn-childrenless {
-	text-align: center;
-	padding: 0; //$btn-childrenless-padding;
-	min-width: $btn-size;
-	min-height: $btn-size;
- 
-
-
+  text-align: center;
+  padding: 0; //$btn-childrenless-padding;
+  min-width: $btn-size;
+  min-height: $btn-size;
 }
+
 .n-btn-icon-element {
-	background: rgba(0, 0, 0, 0.3);
-	vertical-align: middle;
-	display: inline-block;
-	width: $btn-icon-width;
-	position: absolute;
-	&:before {
-		display: inline-block;
-		line-height: $btn-icon-height;
-	}
+  background: rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+  display: inline-block;
+  width: $btn-icon-width;
+  &:before {
+    display: inline-block;
+    line-height: $btn-icon-height;
+  }
 }
+
 .n-btn-icon:not(.n-btn-icon-right) {
-	.n-btn-icon-element {
-		top: 0;
-		left: 0;
-		bottom: 0;
-	}
+  .n-btn-icon-element {
+    float: left;
+  }
 }
 
 .n-btn-icon.n-btn-icon-right {
-	.n-btn-icon-element {
-		top: 0;
-		right: 0;
-		bottom: 0;
-	}
+  .n-btn-icon-element {
+    float: right;
+  }
 }
 
 //button colors
 .n-btn {
-	@include button($color-gray,darken($color-gray, 15%), $color-gray-light, $btn-border, $color-black, $color-gray-dark, $color-black);
+  @include button(
+    $color-gray,
+    darken($color-gray, 15%),
+    $color-gray-light,
+    $btn-border,
+    $color-black,
+    $color-gray-dark,
+    $color-black
+  );
 }
 
 .n-btn-success {
-	@include button($color-success,darken($color-success, 15%), lighten($color-success, 45%), $btn-border-success, $color-font-primary);
+  @include button(
+    $color-success,
+    darken($color-success, 15%),
+    lighten($color-success, 45%),
+    $btn-border-success,
+    $color-font-primary
+  );
 }
 
 .n-btn-danger {
-	@include button($color-danger,darken($color-danger, 15%), lighten($color-danger, 45%), $btn-border-danger, $color-font-primary);
+  @include button(
+    $color-danger,
+    darken($color-danger, 15%),
+    lighten($color-danger, 45%),
+    $btn-border-danger,
+    $color-font-primary
+  );
 }
 
 .n-btn-info {
-	@include button($color-info,darken($color-info, 15%), lighten($color-info, 45%), $btn-border-info, $color-font-primary);
+  @include button(
+    $color-info,
+    darken($color-info, 15%),
+    lighten($color-info, 45%),
+    $btn-border-info,
+    $color-font-primary
+  );
 }
 
 .n-btn-warning {
-	@include button($color-warning,darken($color-warning, 15%), lighten($color-warning, 45%), $btn-border-warning, $color-font-primary);
+  @include button(
+    $color-warning,
+    darken($color-warning, 15%),
+    lighten($color-warning, 45%),
+    $btn-border-warning,
+    $color-font-primary
+  );
 }
 
 .n-btn-primary {
-	@include button($color-primary,darken($color-primary, 15%), lighten($color-primary, 45%), $btn-border-primary, $color-font-primary);
+  @include button(
+    $color-primary,
+    darken($color-primary, 15%),
+    lighten($color-primary, 45%),
+    $btn-border-primary,
+    $color-font-primary
+  );
 }
 
 .n-btn-secondary {
-	@include button($color-secondary,darken($color-secondary, 15%), lighten($color-secondary, 30%), $btn-border-secondary, $color-font-secondary);
+  @include button(
+    $color-secondary,
+    darken($color-secondary, 15%),
+    lighten($color-secondary, 30%),
+    $btn-border-secondary,
+    $color-font-secondary
+  );
 }
