@@ -33,7 +33,9 @@
     "compile": "lerna exec --no-bail -- babel src -d lib --config-file ../../.babelrc"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "acorn": "5.7.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "buble": "0.19.4",
     "docz": "^0.12.5",
     "docz-plugin-github-page": "^1.0.4",
@@ -47,7 +49,7 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
   },
-  "homepage": "https://jossanpetrenko.github.io/spa-framework/",
+  "homepage": "https://nuvemtecnologia.github.io/nimbos/",
   "jest": {
     "setupFiles": [
       "./test/jest-setup.js"
@@ -56,5 +58,5 @@
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ]
   },
-  "name": "nimbus"
+  "name": "nimbos"
 }

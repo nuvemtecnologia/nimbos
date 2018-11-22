@@ -1,42 +1,34 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "shippedProposals": true,
-          "modules": false,
-          "targets": {
-            "browsers": [
-              "last 2 versions"
-            ]
-          }
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "modules": false,
+        "targets": {
+          "browsers": ["last 2 versions"]
         }
-      ],
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "syntax-dynamic-import"
-    ],
-    "env": {
-      "test": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "shippedProposals": true,
-              "comments": true,
-              "targets": {
-                "browsers": [
-                  "last 2 versions"
-                ]
-              }
-            }
-          ],
-          "@babel/preset-react"
-        ],
-        "plugins": [
-          "syntax-dynamic-import"
-        ]
       }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": ["syntax-dynamic-import", "@babel/plugin-proposal-class-properties"],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "shippedProposals": true,
+            "comments": true,
+            "targets": {
+              "browsers": ["last 2 versions"]
+            }
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": ["syntax-dynamic-import", "@babel/plugin-proposal-class-properties"]
     }
   }
+}

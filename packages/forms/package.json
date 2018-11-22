@@ -1,0 +1,35 @@
+{
+  "name": "forms",
+  "version": "1.0.0",
+  "description": "Form interativo para react",
+  "author": "castrolol <lu4n.k4str0@gmail.com>",
+  "homepage": "https://jossanpetrenko.github.io/spa-framework/tree/master/packages/forms#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "dependencies": {
+    "debounce": "^1.2.0",
+    "lodash.concat": "^4.5.0",
+    "lodash.uniq": "^4.5.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
+    "recompose": "^0.30.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvemtecnologia/nimbos.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nuvemtecnologia/nimbos/issues"
+  }
+}
