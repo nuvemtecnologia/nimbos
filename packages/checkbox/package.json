@@ -1,5 +1,5 @@
 {
-  "name": "checkbox",
+  "name": "@nimbos/checkbox",
   "version": "0.1.0",
   "description": "html input checkbox",
   "keywords": [
@@ -31,5 +31,6 @@
   },
   "bugs": {
     "url": "https://github.com/nuvemtecnologia/nimbos/issues"
-  }
+  },
+  "gitHead": "0624c6f1b1dfd004c401a03578e70113d62aed69"
 }
