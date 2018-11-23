@@ -25,119 +25,60 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
-import Label from './Label';
-import uuid from 'uuid/v4';
 
-var Text =
+var Checkbox =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(Text, _React$PureComponent);
+  _inherits(Checkbox, _React$PureComponent);
 
-  function Text(props) {
-    var _this;
+  function Checkbox() {
+    _classCallCheck(this, Checkbox);
 
-    _classCallCheck(this, Text);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
-    _this.state = {
-      id: props.id || "Text-".concat(uuid())
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Checkbox).apply(this, arguments));
   }
 
-  _createClass(Text, [{
-    key: "handleIcon",
-    value: function handleIcon(icon, onClick) {
-      var orientation = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'right';
-      if (!icon) return;
-      var classIcon = css('n-entry-icon', orientation, {
-        'n-entry-icon-clicable': onClick
-      }, icon);
+  _createClass(Checkbox, [{
+    key: "renderText",
+    value: function renderText() {
+      var text = this.props.text;
+      if (!text) return null;
       return React.createElement("span", {
-        onClick: onClick,
-        className: classIcon
-      });
-    }
-  }, {
-    key: "renderInput",
-    value: function renderInput() {
-      var _this$props = this.props,
-          children = _this$props.children,
-          placeholder = _this$props.placeholder,
-          label = _this$props.label,
-          width = _this$props.width,
-          iconRight = _this$props.iconRight,
-          iconLeft = _this$props.iconLeft,
-          className = _this$props.className,
-          onIconRightClick = _this$props.onIconRightClick,
-          onIconLeftClick = _this$props.onIconLeftClick,
-          othersProps = _objectWithoutProperties(_this$props, ["children", "placeholder", "label", "width", "iconRight", "iconLeft", "className", "onIconRightClick", "onIconLeftClick"]);
-
-      var classInput = css('n-entry', className);
-      return React.createElement("span", null, React.createElement("input", _extends({
-        className: classInput,
-        placeholder: placeholder,
-        id: this.state.id
-      }, othersProps)), this.handleIcon(iconLeft, onIconLeftClick, 'left'), this.handleIcon(iconRight, onIconRightClick, 'right'));
+        className: "n-check,box-text-content"
+      }, text);
     }
   }, {
     key: "render",
     value: function render() {
-      var classRoot = css('n-entry-root');
-      var classContainer = css('n-entry-container', {
-        'n-input-icon-left': this.props.iconLeft,
-        'n-input-icon-right': this.props.iconRight
-      });
-      var _this$props2 = this.props,
-          label = _this$props2.label,
-          width = _this$props2.width;
+      var _this$props = this.props,
+          disabled = _this$props.disabled,
+          text = _this$props.text,
+          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text"]);
 
-      if ('label' in this.props) {
-        return React.createElement("div", {
-          className: classRoot,
-          style: {
-            width: width
-          }
-        }, React.createElement(Label, {
-          htmlFor: this.state.id
-        }, label), React.createElement("div", {
-          className: classContainer
-        }, this.renderInput()));
-      } else {
-        return React.createElement("div", {
-          style: {
-            width: width,
-            boxSizing: 'border-box'
-          },
-          className: classRoot
-        }, this.renderInput());
-      }
+      var classList = css('n-checkbox', {
+        'n-checkbox-d.isabled': disabled,
+        'n-checkbox-text': text
+      });
+      return React.createElement("label", {
+        className: classList
+      }, React.createElement("input", _extends({
+        type: "checkbox",
+        disabled: disabled
+      }, othersProps)), this.renderText());
     }
   }]);
 
-  return Text;
+  return Checkbox;
 }(React.PureComponent);
 
-export { Text as default };
-Text.propTypes = {
-  /** Rótulo do input. */
-  label: PropTypes.PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+export { Checkbox as default };
+Checkbox.propTypes = {
+  /** Dispara a função onChange. */
+  onChange: PropTypes.func,
 
-  /** Placeholder do input. */
-  placeholder: PropTypes.string,
-
-  /** Input desabilitado. */
+  /** Checkbox se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Tamanho horizontal do input. */
-  width: PropTypes.string,
-
-  /** Ícone no entry a esquerda. */
-  iconLeft: PropTypes.string,
-
-  /** Ícone no entry a direita. */
-  iconRight: PropTypes.string
+  /** Checkbox se torna desabilitado. */
+  text: PropTypes.bool
 };
-Text.defaultProps = {
-  width: '100%'
-};
+Checkbox.defaultProps = {};

@@ -12,6 +12,7 @@
     box-sizing: border-box;
     cursor: pointer;
     vertical-align: bottom;
+    padding: 0;
     &:focus {
         opacity: $opacity-md;
     }
@@ -28,14 +29,12 @@
 }
 
 //icon
-.n-btn-icon {
-    padding: $btn-icon-padding;
-}
-
-.n-btn-icon-right {
-    padding: $btn-icon-right-padding;
-}
-
+// .n-btn-icon {
+//     /// padding: $btn-icon-padding;
+// }
+// .n-btn-icon-right {
+//     //padding: $btn-icon-right-padding;
+// }
 // :not(.n-btn-childrenless).n-btn-icon.with-icon-background {
 //   padding: $btn-icon-bg-padding;
 // }

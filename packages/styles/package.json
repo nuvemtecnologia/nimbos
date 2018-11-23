@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/styles",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A styles package for @nimbos project",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,5 @@
     "classnames": "^2.2.6",
     "normalize-scss": "^7.0.1"
   },
-  "gitHead": "0624c6f1b1dfd004c401a03578e70113d62aed69"
+  "gitHead": "2ff5c0764ff6d945100e14f132668485ed53415e"
 }
