@@ -1,11 +1,11 @@
 {
   "name": "@nimbos/auth",
-  "version": "0.1.0",
-  "description": "> TODO: description",
+  "version": "0.1.2",
+  "description": "A redux-oidc sugar syntax package to auth",
   "author": "castrolol <lu4n.k4str0@gmail.com>",
   "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/auth#readme",
   "license": "ISC",
-  "main": "lib/auth.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -29,7 +29,8 @@
   "dependencies": {
     "react": "^16.6.3",
     "redux-oidc": "^3.1.0",
-    "oidc-client": "^1.5.4"
+    "oidc-client": "^1.5.4",
+    "react-redux": "^5.1.1"
   },
   "gitHead": "33cb2a16f0661a23c582a5858621aa9d61b2e900"
 }

@@ -21,33 +21,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import { createUserManager, OidcProvider, loadUser } from 'redux-oidc';
+import { userManager, config as _config } from './user-manager';
+import { AuthGuard } from './guard';
 
 var _internalUpdateUserManager = function _internalUpdateUserManager() {};
 
-var _config = {
-  client_id: 'NONE',
-  redirect_uri: "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(window.location.port ? ":".concat(window.location.port) : '', "/callback"),
-  response_type: 'token id_token',
-  scope: 'openid profile',
-  authority: 'NONE',
-  silent_redirect_uri: "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(window.location.port ? ":".concat(window.location.port) : '', "/silent_renew.html"),
-  post_logout_redirect_uri: "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(window.location.port ? ":".concat(window.location.port) : '', "/"),
-  automaticSilentRenew: true,
-  filterProtocolClaims: true,
-  loadUserInfo: true,
-  userStore: new WebStorageStateStore({
-    store: window.localStorage
-  }),
-  revokeAccessTokenOnSignout: true,
-  includeIdTokenInSilentRenew: true,
-  popup_redirect_uri: ''
-};
-export var userManager = {
-  current: null
-};
+export { userManager };
 export function authConfig(config) {
-  _config = _objectSpread({}, _config, config);
-  userManager.current = createUserManager(_config);
+  _config.current = _objectSpread({}, _config.current, config);
+  userManager.current = createUserManager(_config.current);
 
   _internalUpdateUserManager(userManager);
 }
@@ -103,7 +85,7 @@ function (_React$PureComponent) {
       return React.createElement(OidcProvider, {
         store: store,
         userManager: this.state.userManager
-      }, children);
+      }, React.createElement(AuthGuard, null, children));
     }
   }]);
 
