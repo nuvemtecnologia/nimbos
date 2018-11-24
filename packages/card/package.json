@@ -5,7 +5,7 @@
   "author": "castrolol <lu4n.k4str0@gmail.com>",
   "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/card#readme",
   "license": "ISC",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "@nimbos/core": "latest",
     "prop-types": "latest"
