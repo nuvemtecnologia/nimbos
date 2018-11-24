@@ -23,7 +23,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 import React, { PureComponent } from 'react';
 import { mapProps, setDisplayName, compose } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
-import { mapFormProps } from './helpers/form-utils';
+import { mapFormProps, mapFormSimpleProps } from './helpers/form-utils';
 
 var FormComponent =
 /*#__PURE__*/
