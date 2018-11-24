@@ -1,5 +1,6 @@
 @import './variables.scss';
 .n-card {
+  background: $card-background;
   border: $card-border;
   padding: $card-padding;
   border-radius: $card-border-radius;
