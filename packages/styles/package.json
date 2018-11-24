@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/styles",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A styles package for @nimbos project",
   "main": "index.js",
   "scripts": {
