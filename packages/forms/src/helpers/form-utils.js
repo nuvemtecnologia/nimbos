@@ -1,8 +1,8 @@
-import uniq from "lodash.uniq";
-import concat from "lodash.concat";
-import { shallowEqual } from "recompose";
+import uniq from 'lodash.uniq';
+import concat from 'lodash.concat';
+import { shallowEqual } from 'recompose';
 export function notEmpty(value) {
-  return typeof value !== "undefined";
+  return typeof value !== 'undefined';
 }
 
 export function unwrapFormData(data) {
@@ -32,12 +32,7 @@ export function wrapFormData(props) {
   let data = {};
 
   const names = uniq(
-    concat(
-      Object.keys(values || {}),
-      Object.keys(errors || {}),
-      Object.keys(touched || {}),
-      Object.keys(fields || {})
-    )
+    concat(Object.keys(values || {}), Object.keys(errors || {}), Object.keys(touched || {}), Object.keys(fields || {}))
   );
 
   for (let name of names) {
@@ -50,7 +45,14 @@ export function wrapFormData(props) {
 
   return data;
 }
+export function mapFormSimpleProps(props) {
+  const { data, onChange, ...p } = props;
 
+  const rawData = wrapFormData(data);
+  const rawOnChange = data => unwrapFormData(data);
+
+  return { ...p, data: rawData, onChange: rawOnChange };
+}
 export function mapFormProps(props) {
   const {
     values,

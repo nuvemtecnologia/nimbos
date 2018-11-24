@@ -3,7 +3,7 @@ import { mapProps } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
 import { mapFormProps } from './helpers/form-utils';
 
-class Form extends PureComponent {
+class FormComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -127,4 +127,9 @@ class Form extends PureComponent {
   }
 }
 
-export default mapProps(mapFormProps)(Form);
+export const FormHash = setDisplayName('FormHash')(FormComponent);
+export const Form = mapProps(mapFormProps)(FormComponent);
+export const FormSimple = compose(
+  setDisplayName('FormSimple'),
+  mapProps(mapFormSimpleProps)
+)(FormComponent);
