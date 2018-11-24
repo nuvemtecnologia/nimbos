@@ -1,0 +1,76 @@
+---
+name: nimbos/card
+menu: Components
+---
+
+import '../../styles/scss/theme.scss';
+import t from '../../i18n';
+
+# **Card**
+
+import { PropsTable, Playground } from 'docz';
+import Card from '../src/index';
+import Button from '../../button/src/index';
+
+## Propriedades
+
+### Card Properties
+
+<PropsTable of={Card} />
+
+### Card.Body Properties
+
+<PropsTable of={Card.Body} />
+
+### Card.Title Properties
+
+<PropsTable of={Card.Title} />
+
+### Exemplos
+
+## Simples
+
+<Playground>
+  <Card>Os cards sozinhos não tem padding</Card>
+</Playground>
+
+## Corpo (Body)
+
+<Playground>
+  <Card>
+    <Card.Body>O Card.Body tem padding</Card.Body>
+  </Card>
+</Playground>
+
+## Titulo
+
+<Playground>
+  <Card>
+    <Card.Title>Sou um card</Card.Title>
+    <Card.Body>O Card.Body tem padding</Card.Body>
+  </Card>
+</Playground>
+
+## Titulo Sublinhado
+
+<Playground>
+  <Card>
+    <Card.Title divided>Sou um card</Card.Title>
+    <Card.Body>O Card.Body tem padding</Card.Body>
+  </Card>
+</Playground>
+
+## Botão no Titulo
+
+<Playground>
+  <Card>
+    <Card.Title divided>
+        Sou um card
+        <Card.Title.Right>
+            <Button flat flavor="success" icon="mdi mdi-plus-box"> Novo Item </Button>
+        </Card.Title.Right>
+        </Card.Title>
+    <Card.Body>O Card.Body tem padding</Card.Body>
+
+  </Card>
+</Playground>

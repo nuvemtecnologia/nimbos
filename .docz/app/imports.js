@@ -3,6 +3,8 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "packages-styles-readme" */ 'packages/styles/readme.mdx'),
   'packages/button/docs/button.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "packages-button-docs-button" */ 'packages/button/docs/button.mdx'),
+  'packages/card/docs/Card.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "packages-card-docs-card" */ 'packages/card/docs/Card.mdx'),
   'packages/checkbox/docs/checkbox.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "packages-checkbox-docs-checkbox" */ 'packages/checkbox/docs/checkbox.mdx'),
   'packages/entry/docs/entry.mdx': () =>

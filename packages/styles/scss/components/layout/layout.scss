@@ -21,7 +21,6 @@
 }
 
 .n-layout-container {
-    background: yellow;
     width: calc(100% - #{$layout-sidebar-width});
     margin-left: $layout-sidebar-width;
     margin-top: $layout-topbar-height;

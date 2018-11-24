@@ -5,22 +5,21 @@ menu: Components
 
 import '../../styles/scss/theme.scss';
 import t from '../../i18n';
-import {Row, Col} from 'react-grid-system';
-
+import { Row, Col } from 'react-grid-system';
 
 # **Entry**
 
-import { PropsTable, Playground } from 'docz'
+import { PropsTable, Playground } from 'docz';
 import { Text } from '../src/index';
-
 
 <PropsTable of={Text} />
 
 ## Text Entry
+
 ### Exemplo Simples
 
 <Playground>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} />
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} />
 </Playground>
 
 ### Exemplos Label
@@ -28,16 +27,17 @@ import { Text } from '../src/index';
 <Playground>
   <Row>
     <Col md={4}>
-      <Text label={t`common.label`} placeholder={t`common.placeholder`}/>
+      <Text label={t('common.label')} placeholder={t('common.placeholder')}/>
     </Col>
 
     <Col md={4}>
-      <Text  label placeholder={t`common.placeholder`}/>
+      <Text  label placeholder={t('common.placeholder')}/>
     </Col>
 
     <Col md={4}>
-      <Text  placeholder={t`common.placeholder`} />
+      <Text  placeholder={t('common.placeholder')} />
     </Col>
+
   </Row>
 
 </Playground>
@@ -45,22 +45,26 @@ import { Text } from '../src/index';
 ### Exemplos Disabled
 
 <Playground>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} disabled/>
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} disabled />
 </Playground>
 
 ### Exemplos Width
 
 <Playground>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} width='50%'/>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} width='392px'/>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} width='49rem'/>
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} width="50%" />
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} width="392px" />
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} width="49rem" />
 </Playground>
 
 ### Exemplos Icon
 
 <Playground>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} iconLeft="fas fa-cloud"/>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} iconRight="fas fa-cloud"/>
-    <Text label={t`common.label`} placeholder={t`common.placeholder`} iconRight="fas fa-cloud" iconLeft="fas fa-cloud"/>
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} iconLeft="fas fa-cloud" />
+  <Text label={t('common.label')} placeholder={t('common.placeholder')} iconRight="fas fa-cloud" />
+  <Text
+    label={t('common.label')}
+    placeholder={t('common.placeholder')}
+    iconRight="fas fa-cloud"
+    iconLeft="fas fa-cloud"
+  />
 </Playground>
-

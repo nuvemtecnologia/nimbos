@@ -20,9 +20,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+import React from 'react';
 import { createUserManager, OidcProvider, loadUser } from 'redux-oidc';
 import { userManager, config as _config } from './user-manager';
-import { AuthGuard } from './guard';
+import AuthGuard from './guard';
+export { reducer } from './reducer';
+export * from './callback';
 
 var _internalUpdateUserManager = function _internalUpdateUserManager() {};
 
@@ -31,7 +34,7 @@ export function authConfig(config) {
   _config.current = _objectSpread({}, _config.current, config);
   userManager.current = createUserManager(_config.current);
 
-  _internalUpdateUserManager(userManager);
+  _internalUpdateUserManager(userManager.current);
 }
 export var AuthProvider =
 /*#__PURE__*/
@@ -72,7 +75,7 @@ function (_React$PureComponent) {
       };
 
       if (this.state.userManager) {
-        loadUser(this.props.store, userManager);
+        loadUser(this.props.store, this.state.userManager);
       }
     }
   }, {

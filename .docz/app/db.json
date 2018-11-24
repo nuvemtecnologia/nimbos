@@ -105,6 +105,73 @@
         }
       ]
     },
+    "packages/card/docs/Card.mdx": {
+      "name": "nimbos/card",
+      "menu": "Components",
+      "id": "05d405c32b2394a93f7eb78326aac5f6",
+      "filepath": "packages/card/docs/Card.mdx",
+      "link": null,
+      "slug": "packages-card-docs-card",
+      "route": "/packages-card-docs-card",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "card",
+          "value": "Card"
+        },
+        {
+          "depth": 2,
+          "slug": "propriedades",
+          "value": "Propriedades"
+        },
+        {
+          "depth": 3,
+          "slug": "card-properties",
+          "value": "Card Properties"
+        },
+        {
+          "depth": 3,
+          "slug": "cardbody-properties",
+          "value": "Card.Body Properties"
+        },
+        {
+          "depth": 3,
+          "slug": "cardtitle-properties",
+          "value": "Card.Title Properties"
+        },
+        {
+          "depth": 3,
+          "slug": "exemplos",
+          "value": "Exemplos"
+        },
+        {
+          "depth": 2,
+          "slug": "simples",
+          "value": "Simples"
+        },
+        {
+          "depth": 2,
+          "slug": "corpo-body",
+          "value": "Corpo (Body)"
+        },
+        {
+          "depth": 2,
+          "slug": "titulo",
+          "value": "Titulo"
+        },
+        {
+          "depth": 2,
+          "slug": "titulo-sublinhado",
+          "value": "Titulo Sublinhado"
+        },
+        {
+          "depth": 2,
+          "slug": "botão-no-titulo",
+          "value": "Botão no Titulo"
+        }
+      ]
+    },
     "packages/checkbox/docs/checkbox.mdx": {
       "name": "nimbos/checkbox",
       "menu": "Components",

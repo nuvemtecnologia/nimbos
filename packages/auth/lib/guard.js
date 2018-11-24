@@ -1,13 +1,25 @@
 import { connect } from 'react-redux';
-var alreadyInitialized = false;
+import { goToLogin } from './user-manager';
+var goingToLogin = false;
+var isSilentRenew = false;
 
 function AuthGuard(_ref) {
-  var user = _ref.user,
-      children = _ref.children;
+  var authStatus = _ref.authStatus,
+      children = _ref.children,
+      loading = _ref.loading;
 
-  if (user || alreadyInitialized) {
-    alreadyInitialized = true;
+  if (authStatus == 'USER_LOADED' || authStatus == 'LOADING' && isSilentRenew) {
+    isSilentRenew = true;
     return children;
+  }
+
+  var LOGOUT_STATUS = ['USER_SIGNED_OUT', 'USER_EXPIRED'].includes(authStatus);
+
+  if (LOGOUT_STATUS && !loading) {
+    if (goingToLogin) return null;
+    goingToLogin = true;
+    goToLogin();
+    return null;
   }
 
   return null;
@@ -15,8 +27,8 @@ function AuthGuard(_ref) {
 
 var mapStateToProps = function mapStateToProps(state, props) {
   return {
-    user: state.oidc.user,
-    loading: state.oidc.isLoadingUser
+    authStatus: state.auth.status,
+    loading: state.auth.isLoadingUser
   };
 };
 

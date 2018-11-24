@@ -8,17 +8,18 @@ import t from '../../i18n';
 
 # **Entry Label**
 
-import { PropsTable, Playground } from 'docz'
+import { PropsTable, Playground } from 'docz';
 import { Label } from '../src/index';
-
 
 <PropsTable of={Label} />
 
 ## Label
+
 ### Exemplos
 
 <Playground>
-    <Label>{t`common.label`}</Label>
+    <Label>{t('common.label')}</Label>
 
-    <Label htmlFor='rotulo'>{t`common.label`} </Label>
+    <Label htmlFor='rotulo'>{t('common.label')} </Label>
+
 </Playground>

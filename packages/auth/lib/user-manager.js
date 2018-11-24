@@ -1,3 +1,4 @@
+import { WebStorageStateStore } from 'oidc-client';
 export function goToLogin() {
   var location = window.location;
   var redirectUri = location.pathname;

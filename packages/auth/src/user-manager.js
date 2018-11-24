@@ -1,3 +1,4 @@
+import { WebStorageStateStore } from 'oidc-client';
 export function goToLogin() {
   const location = window.location;
 
