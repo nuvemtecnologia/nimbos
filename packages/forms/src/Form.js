@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { mapProps } from 'recompose';
+import { mapProps, setDisplayName } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
 import { mapFormProps } from './helpers/form-utils';
 
