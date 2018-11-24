@@ -1,26 +1,27 @@
 @import './variables.scss';
 .n-card {
-  background: $card-background;
-  border: $card-border;
-  padding: $card-padding;
-  border-radius: $card-border-radius;
-  box-shadow: $card-box-shadow;
-  .n-card-body {
-    font-size: $card-body-font-size;
-    padding: $card-body-padding;
-  }
-  .n-card-title {
-    padding: $card-body-padding;
-    font-weight: $card-title-weight;
-    font-size: $card-title-font-size;
-    &:not(.n-card-title-divided) + .n-card-body {
-      padding-top: 0;
+    background: $card-background;
+    border: $card-border;
+    margin: $card-border;
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+    box-shadow: $card-box-shadow;
+    .n-card-body {
+        font-size: $card-body-font-size;
+        padding: $card-body-padding;
     }
-    &.n-card-title-divided {
-      border-bottom: 1px solid #d8d8d8;
+    .n-card-title {
+        padding: $card-body-padding;
+        font-weight: $card-title-weight;
+        font-size: $card-title-font-size;
+        &:not(.n-card-title-divided)+.n-card-body {
+            padding-top: 0;
+        }
+        &.n-card-title-divided {
+            border-bottom: 1px solid #d8d8d8;
+        }
+        .n-card-title-right {
+            float: right;
+        }
     }
-    .n-card-title-right {
-      float: right;
-    }
-  }
 }
