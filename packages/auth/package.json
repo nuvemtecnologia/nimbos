@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/auth",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A redux-oidc sugar syntax package to auth",
   "author": "castrolol <lu4n.k4str0@gmail.com>",
   "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/auth#readme",
