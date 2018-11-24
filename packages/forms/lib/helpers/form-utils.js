@@ -81,7 +81,7 @@ export function mapFormSimpleProps(props) {
   var rawData = wrapFormData(data);
 
   var rawOnChange = function rawOnChange(data) {
-    return unwrapFormData(data);
+    return onChange(unwrapFormData(data));
   };
 
   return _objectSpread({}, p, {

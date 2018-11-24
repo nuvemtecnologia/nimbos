@@ -49,7 +49,7 @@ export function mapFormSimpleProps(props) {
   const { data, onChange, ...p } = props;
 
   const rawData = wrapFormData(data);
-  const rawOnChange = data => unwrapFormData(data);
+  const rawOnChange = data => onChange(unwrapFormData(data));
 
   return { ...p, data: rawData, onChange: rawOnChange };
 }
