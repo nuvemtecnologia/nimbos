@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { mapProps, setDisplayName, compose } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
-import { mapFormProps } from './helpers/form-utils';
+import { mapFormProps, mapFormSimpleProps } from './helpers/form-utils';
 
 class FormComponent extends PureComponent {
   constructor(props) {
