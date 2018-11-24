@@ -6,11 +6,11 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import uniq from "lodash.uniq";
-import concat from "lodash.concat";
-import { shallowEqual } from "recompose";
+import uniq from 'lodash.uniq';
+import concat from 'lodash.concat';
+import { shallowEqual } from 'recompose';
 export function notEmpty(value) {
-  return typeof value !== "undefined";
+  return typeof value !== 'undefined';
 }
 export function unwrapFormData(data) {
   var values = {};
@@ -72,6 +72,22 @@ export function wrapFormData(props) {
   }
 
   return data;
+}
+export function mapFormSimpleProps(props) {
+  var data = props.data,
+      onChange = props.onChange,
+      p = _objectWithoutProperties(props, ["data", "onChange"]);
+
+  var rawData = wrapFormData(data);
+
+  var rawOnChange = function rawOnChange(data) {
+    return unwrapFormData(data);
+  };
+
+  return _objectSpread({}, p, {
+    data: rawData,
+    onChange: rawOnChange
+  });
 }
 export function mapFormProps(props) {
   var values = props.values,

@@ -25,17 +25,17 @@ import { mapProps } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
 import { mapFormProps } from './helpers/form-utils';
 
-var Form =
+var FormComponent =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Form, _PureComponent);
+  _inherits(FormComponent, _PureComponent);
 
-  function Form(props) {
+  function FormComponent(props) {
     var _this;
 
-    _classCallCheck(this, Form);
+    _classCallCheck(this, FormComponent);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Form).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FormComponent).call(this, props));
     _this.state = {
       listeners: {
         '*': []
@@ -54,7 +54,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  _createClass(Form, [{
+  _createClass(FormComponent, [{
     key: "subscribe",
     value: function subscribe(names, fn) {
       var _this2 = this;
@@ -225,7 +225,9 @@ function (_PureComponent) {
     }
   }]);
 
-  return Form;
+  return FormComponent;
 }(PureComponent);
 
-export default mapProps(mapFormProps)(Form);
+export var FormHash = setDisplayName('FormHash')(FormComponent);
+export var Form = mapProps(mapFormProps)(FormComponent);
+export var FormSimple = compose(setDisplayName('FormSimple'), mapProps(mapFormSimpleProps))(FormComponent);
