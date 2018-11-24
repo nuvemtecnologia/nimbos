@@ -21,7 +21,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 import React, { PureComponent } from 'react';
-import { mapProps, setDisplayName } from 'recompose';
+import { mapProps, setDisplayName, compose } from 'recompose';
 import { FormDataProvider, FormHandlerProvider } from './helpers/form-context';
 import { mapFormProps } from './helpers/form-utils';
 
