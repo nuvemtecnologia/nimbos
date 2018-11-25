@@ -74,7 +74,13 @@ function (_React$PureComponent) {
           othersProps = _objectWithoutProperties(_this$props, ["children", "placeholder", "label", "width", "iconRight", "iconLeft", "className", "onIconRightClick", "onIconLeftClick"]);
 
       var classInput = css('n-entry', className);
-      return React.createElement("span", null, React.createElement("input", _extends({
+      var Element = 'input';
+
+      if (othersProps.type == 'textarea') {
+        Element = 'textarea';
+      }
+
+      return React.createElement("span", null, React.createElement(Element, _extends({
         className: classInput,
         placeholder: placeholder,
         id: this.state.id
