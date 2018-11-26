@@ -26,24 +26,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
 
-var Checkbox =
+var Radio =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(Checkbox, _React$PureComponent);
+  _inherits(Radio, _React$PureComponent);
 
-  function Checkbox() {
-    _classCallCheck(this, Checkbox);
+  function Radio() {
+    _classCallCheck(this, Radio);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Checkbox).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Radio).apply(this, arguments));
   }
 
-  _createClass(Checkbox, [{
+  _createClass(Radio, [{
     key: "renderText",
     value: function renderText() {
       var text = this.props.text;
       if (!text) return null;
       return React.createElement("span", {
-        className: "n-checkbox-text-content"
+        className: "n-radio-text-content"
       }, text);
     }
   }, {
@@ -54,31 +54,31 @@ function (_React$PureComponent) {
           text = _this$props.text,
           othersProps = _objectWithoutProperties(_this$props, ["disabled", "text"]);
 
-      var classList = css('n-checkbox', {
-        'n-checkbox-disabled': disabled,
-        'n-checkbox-text': text
+      var classList = css('n-radio', {
+        'n-radio-disabled': disabled,
+        'n-radio-text': text
       });
       return React.createElement("label", {
         className: classList
       }, React.createElement("input", _extends({
-        type: "checkbox",
+        type: "radio",
         disabled: disabled
       }, othersProps)), this.renderText());
     }
   }]);
 
-  return Checkbox;
+  return Radio;
 }(React.PureComponent);
 
-export { Checkbox as default };
-Checkbox.propTypes = {
+export { Radio as default };
+Radio.propTypes = {
   /** Dispara a função onChange. */
   onChange: PropTypes.func,
 
-  /** Checkbox se torna desabilitado. */
+  /** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Checkbox se torna desabilitado. */
+  /** Radio se torna desabilitado. */
   text: PropTypes.bool
 };
-Checkbox.defaultProps = {};
+Radio.defaultProps = {};

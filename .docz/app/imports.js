@@ -15,4 +15,6 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "packages-i18n-docs-i18n" */ 'packages/i18n/docs/i18n.mdx'),
   'packages/layout/docs/layout.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "packages-layout-docs-layout" */ 'packages/layout/docs/layout.mdx'),
+  'packages/radio/docs/radio.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "packages-radio-docs-radio" */ 'packages/radio/docs/radio.mdx'),
 }

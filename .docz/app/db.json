@@ -326,6 +326,23 @@
           "value": "Layout"
         }
       ]
+    },
+    "packages/radio/docs/radio.mdx": {
+      "name": "nimbos/radio",
+      "menu": "Components",
+      "id": "ac22384b5142e92d6a46a56c6c1a6685",
+      "filepath": "packages/radio/docs/radio.mdx",
+      "link": null,
+      "slug": "packages-radio-docs-radio",
+      "route": "/packages-radio-docs-radio",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "radio",
+          "value": "Radio"
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,34 @@
+{
+  "name": "radio",
+  "version": "0.1.0",
+  "description": "input radio",
+  "keywords": [
+    "html",
+    "input",
+    "radio"
+  ],
+  "author": "Jossan Petrenko <jossanpetrenko@hotmail.com>",
+  "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/radio#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvemtecnologia/nimbos.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nuvemtecnologia/nimbos/issues"
+  }
+}

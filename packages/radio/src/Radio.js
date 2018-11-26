@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
 
-export default class Checkbox extends React.PureComponent {
+export default class Radio extends React.PureComponent {
 
   renderText() {
     const { text } = this.props;
 		if (!text) return null;
-		return <span className={`n-checkbox-text-content`}>{text}</span>;
+		return <span className={`n-radio-text-content`}>{text}</span>;
 	}
 
 	render() {
@@ -17,15 +17,15 @@ export default class Checkbox extends React.PureComponent {
 			...othersProps
 		} = this.props;
 
-    let classList = css('n-checkbox', {
-      'n-checkbox-disabled': disabled,
-      'n-checkbox-text': text,
+    let classList = css('n-radio', {
+      'n-radio-disabled': disabled,
+      'n-radio-text': text,
 		});
 
 		return (
       <label className={classList}>
         <input
-          type="checkbox"
+          type="radio"
           disabled={disabled}
           {...othersProps} />
           {this.renderText()}
@@ -34,16 +34,16 @@ export default class Checkbox extends React.PureComponent {
 	}
 }
 
-Checkbox.propTypes = {
+Radio.propTypes = {
 	/** Dispara a função onChange. */
   onChange: PropTypes.func,
 
-	/** Checkbox se torna desabilitado. */
+	/** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Checkbox se torna desabilitado. */
+  /** Radio se torna desabilitado. */
 	text: PropTypes.bool,
 };
 
 
-Checkbox.defaultProps = {};
+Radio.defaultProps = {};

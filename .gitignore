@@ -69,6 +69,10 @@ typings/
 !.vscode/extensions.json
 .history
 
+## docz
+.docz/app/*
+.docz/cache/*
+
 .DS_Store
 
 .DS_Store
