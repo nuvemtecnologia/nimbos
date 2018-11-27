@@ -6,5 +6,9 @@ export default {
   title: 'Nimbos',
   description: 'Nimbos - SPA Framework',
   indexHtml: '.docz/index_template.html',
-  base: '/nimbos/'
+  base: '/nimbos/',
+  themeConfig: {
+    codeSandbox: false
+  },
+  codeSandbox: false
 };

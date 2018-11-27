@@ -2,12 +2,14 @@
   "config": {
     "title": "Nimbos",
     "description": "Nimbos - SPA Framework",
-    "themeConfig": {},
+    "themeConfig": {
+      "codeSandbox": false
+    },
     "menu": [],
     "ordering": "descending",
     "repository": null,
     "native": false,
-    "codeSandbox": true,
+    "codeSandbox": false,
     "plugins": [
       {},
       {}
