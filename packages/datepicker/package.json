@@ -1,0 +1,31 @@
+{
+  "name": "@nimbos/datepicker",
+  "version": "0.1.0",
+  "description": "input datepicker",
+  "keywords": [
+    "html",
+    "input",
+    "datepicker"
+  ],
+  "author": "Jossan Petrenko <jossanpetrenko@hotmail.com>",
+  "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/datepicker#readme",
+  "license": "ISC",
+  "main": "lib/datepicker.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvemtecnologia/nimbos.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nuvemtecnologia/nimbos/issues"
+  }
+}

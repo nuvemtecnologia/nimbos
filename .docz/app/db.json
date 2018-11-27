@@ -191,6 +191,23 @@
         }
       ]
     },
+    "packages/datepicker/docs/datepicker.mdx": {
+      "name": "nimbos/datepicker",
+      "menu": "Components",
+      "id": "d8fd8f72733efad4b206ef9f8379a2da",
+      "filepath": "packages/datepicker/docs/datepicker.mdx",
+      "link": null,
+      "slug": "packages-datepicker-docs-datepicker",
+      "route": "/packages-datepicker-docs-datepicker",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "datepicker",
+          "value": "Datepicker"
+        }
+      ]
+    },
     "packages/entry/docs/entry.mdx": {
       "name": "nimbos/entry",
       "menu": "Components",

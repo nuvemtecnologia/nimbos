@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+//default
+.n-datepicker {
+  font-size: $content-md;
+  margin-right: $datepicker-margin;
+  border: 10px;
+	border-radius: 10px;
+}
+.n-datepicker-text-content{
+  display: block ;
+  margin-left: $datepicker-margin;
+}
+.n-datepicker-input{
+  border: $datepicker-border;
+  border-radius: $datepicker-border-radius;
+}

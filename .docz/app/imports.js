@@ -7,6 +7,8 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "packages-card-docs-card" */ 'packages/card/docs/Card.mdx'),
   'packages/checkbox/docs/checkbox.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "packages-checkbox-docs-checkbox" */ 'packages/checkbox/docs/checkbox.mdx'),
+  'packages/datepicker/docs/datepicker.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "packages-datepicker-docs-datepicker" */ 'packages/datepicker/docs/datepicker.mdx'),
   'packages/entry/docs/entry.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "packages-entry-docs-entry" */ 'packages/entry/docs/entry.mdx'),
   'packages/entry/docs/label.mdx': () =>

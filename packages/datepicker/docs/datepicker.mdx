@@ -1,0 +1,27 @@
+---
+name: nimbos/datepicker
+menu: Components
+---
+
+import '../../styles/scss/theme.scss';
+import t from '../../i18n';
+
+# **Datepicker**
+
+import { PropsTable, Playground } from 'docz';
+import Datepicker from '../src';
+import styled from 'styled-components';
+
+<PropsTable of={Datepicker} />
+
+<Playground>
+
+<Datepicker />
+
+<Datepicker disabled />
+
+<Datepicker text="Texto" />
+
+<Datepicker disabled text="Desabilitado" />
+
+</Playground>
