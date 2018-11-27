@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
+import { RadioGroupContext } from "./RadioGroupContext";
 
 export default class Radio extends React.PureComponent {
 
@@ -11,24 +12,35 @@ export default class Radio extends React.PureComponent {
 	}
 
 	render() {
+
 		const {
         disabled,
         text,
+        value,
+        children,
 			...othersProps
-		} = this.props;
+    } = this.props;
+    console.log(this.props);
 
     let classList = css('n-radio', {
       'n-radio-disabled': disabled,
       'n-radio-text': text,
-		});
+    });
+
+    const { selectedValue, changeValue } = this.context;
+
+    const currentValues = selectedValue || [];
+    const checked = currentValues.includes(value);
 
 		return (
       <label className={classList}>
         <input
           type="radio"
+          checked={checked}
+          value={value}
           disabled={disabled}
           {...othersProps} />
-          {this.renderText()}
+          {this.renderText(text)}
       </label>
 		);
 	}
@@ -41,9 +53,15 @@ Radio.propTypes = {
 	/** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Radio se torna desabilitado. */
-	text: PropTypes.bool,
+  /** Texto do radio. */
+  text: PropTypes.bool,
+
+  /** Radio se torna selecionado. */
+  checked: PropTypes.bool,
+
 };
 
 
 Radio.defaultProps = {};
+
+Radio.contextType = RadioGroupContext;

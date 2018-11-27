@@ -10,19 +10,24 @@ import t from '../../i18n';
 
 import { PropsTable, Playground } from 'docz'
 import Radio from '../src';
+import RadioGroup from '../src';
 import styled from 'styled-components';
 
 <PropsTable of={Radio} />
 
 <Playground>
 
-  <Radio />
+  <RadioGroup>
+    <Radio />
 
-  <Radio disabled />
+    <Radio disabled />
+  </RadioGroup>
 
-  <Radio text="Texto"/>
+  <RadioGroup>
+    <Radio text="Texto"/>
 
-  <Radio disabled text="Desabilitado"/>
+    <Radio disabled text="Desabilitado"/>
+  </RadioGroup>
 
 
 </Playground>
