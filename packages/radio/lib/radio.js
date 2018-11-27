@@ -25,6 +25,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
+import RadioGroupContext from './RadioGroupContext';
+import RadioGroup from './RadioGroup';
 
 var Radio =
 /*#__PURE__*/
@@ -52,18 +54,30 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           disabled = _this$props.disabled,
           text = _this$props.text,
-          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text"]);
+          value = _this$props.value,
+          children = _this$props.children,
+          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "value", "children"]);
 
+      console.log(this.props);
       var classList = css('n-radio', {
         'n-radio-disabled': disabled,
         'n-radio-text': text
       });
+      var _this$context = this.context,
+          selectedValue = _this$context.selectedValue,
+          changeValue = _this$context.changeValue;
+      var checked = selectedValue === value;
       return React.createElement("label", {
         className: classList
       }, React.createElement("input", _extends({
         type: "radio",
+        checked: checked,
+        value: value,
+        onChange: function onChange() {
+          return changeValue(value);
+        },
         disabled: disabled
-      }, othersProps)), this.renderText());
+      }, othersProps)), this.renderText(text));
     }
   }]);
 
@@ -78,7 +92,12 @@ Radio.propTypes = {
   /** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Radio se torna desabilitado. */
-  text: PropTypes.bool
+  /** Texto do radio. */
+  text: PropTypes.bool,
+
+  /** Radio se torna selecionado. */
+  checked: PropTypes.bool
 };
 Radio.defaultProps = {};
+Radio.Group = RadioGroup;
+Radio.contextType = RadioGroupContext;

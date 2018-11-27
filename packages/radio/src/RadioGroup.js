@@ -1,5 +1,5 @@
-import React from "react";
-import RadioGroupContext from "./RadioGroupContext";
+import React from 'react';
+import RadioGroupContext from './RadioGroupContext';
 
 export default class RadioGroup extends React.PureComponent {
   constructor(props) {
@@ -7,25 +7,15 @@ export default class RadioGroup extends React.PureComponent {
     this.handleRadioChange = this.handleRadioChange.bind(this);
   }
 
-  handleRadioChange(value, checked) {
-    let newValues = [...(this.props.value || [])];
-
-    if (checked) {
-      newValues.push(value);
-    } else {
-      newValues = newValues.filter(x => x != value);
-    }
-
-    this.props.onChange(newValues);
+  handleRadioChange(value) {
+    this.props.onChange(value);
   }
 
   render() {
     const { value, children } = this.props;
 
     return (
-      <RadioGroupContext.Provider
-        value={{ selectedValue: value, changeValue: this.handleRadioChange }}
-      >
+      <RadioGroupContext.Provider value={{ selectedValue: value, changeValue: this.handleRadioChange }}>
         {children}
       </RadioGroupContext.Provider>
     );

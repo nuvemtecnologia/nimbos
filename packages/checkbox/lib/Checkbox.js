@@ -25,6 +25,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
+import CheckboxGroupContext from './CheckboxGroupContext';
 
 var Checkbox =
 /*#__PURE__*/
@@ -52,8 +53,14 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           disabled = _this$props.disabled,
           text = _this$props.text,
-          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text"]);
+          children = _this$props.children,
+          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "children"]);
 
+      var _this$context = this.context,
+          selectedValue = _this$context.selectedValue,
+          changeValue = _this$context.changeValue;
+      var currentValues = selectedValue || [];
+      var checked = currentValues.includes(value);
       var classList = css('n-checkbox', {
         'n-checkbox-disabled': disabled,
         'n-checkbox-text': text
@@ -62,7 +69,11 @@ function (_React$PureComponent) {
         className: classList
       }, React.createElement("input", _extends({
         type: "checkbox",
-        disabled: disabled
+        disabled: disabled,
+        value: value,
+        onClick: function onClick() {
+          return changeValue(value, !checked);
+        }
       }, othersProps)), this.renderText());
     }
   }]);
@@ -71,6 +82,7 @@ function (_React$PureComponent) {
 }(React.PureComponent);
 
 export { Checkbox as default };
+Checkbox.contextType = CheckboxGroupContext;
 Checkbox.propTypes = {
   /** Dispara a função onChange. */
   onChange: PropTypes.func,
@@ -81,4 +93,5 @@ Checkbox.propTypes = {
   /** Checkbox se torna desabilitado. */
   text: PropTypes.bool
 };
+Checkbox.Group = CheckboxGroup;
 Checkbox.defaultProps = {};
