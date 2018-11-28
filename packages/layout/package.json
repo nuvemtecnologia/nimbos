@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/layout",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@nimbos/core": "^0.1.3",
-    "@nimbos/styles": "^0.1.11"
+    "@nimbos/styles": "^0.1.12"
   },
   "peerDependencies": {
     "react": "^16.0.0"
