@@ -14,17 +14,11 @@ export function authConfig(store, config) {
 }
 
 export class AuthProvider extends React.PureComponent {
-  state = {
-    userManager: userManager.current
-  };
-
   render() {
     const { children, store } = this.props;
 
-    if (!this.state.userManager) return children;
-
     return (
-      <OidcProvider store={store} userManager={this.state.userManager}>
+      <OidcProvider store={store} userManager={userManager.current}>
         <AuthGuard>{children}</AuthGuard>
       </OidcProvider>
     );
