@@ -26,14 +26,11 @@ import { userManager, config as _config } from './user-manager';
 import AuthGuard from './guard';
 export { reducer } from './reducer';
 export * from './callback';
-
-var _internalUpdateUserManager = function _internalUpdateUserManager() {};
-
 export { userManager };
 export function authConfig(store, config) {
   _config.current = _objectSpread({}, _config.current, config);
   userManager.current = createUserManager(_config.current);
-  loadUser(store, userManager);
+  loadUser(store, userManager.current);
 }
 export var AuthProvider =
 /*#__PURE__*/

@@ -10,7 +10,7 @@ export { userManager };
 export function authConfig(store, config) {
   _config.current = { ..._config.current, ...config };
   userManager.current = createUserManager(_config.current);
-  loadUser(store, userManager);
+  loadUser(store, userManager.current);
 }
 
 export class AuthProvider extends React.PureComponent {
