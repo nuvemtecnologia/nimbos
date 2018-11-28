@@ -1,4 +1,5 @@
 import { validate } from './validate';
+import { chain } from 'ramda';
 export function validations() {
   for (var _len = arguments.length, items = new Array(_len), _key = 0; _key < _len; _key++) {
     items[_key] = arguments[_key];
