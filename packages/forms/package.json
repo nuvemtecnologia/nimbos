@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/forms",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Form interativo para react",
   "author": "castrolol <lu4n.k4str0@gmail.com>",
   "homepage": "https://jossanpetrenko.github.io/spa-framework/tree/master/packages/forms#readme",
@@ -15,6 +15,7 @@
     "lodash.concat": "^4.5.0",
     "lodash.uniq": "^4.5.0",
     "react": "^16.6.3",
+    "ramda": "^0.26.1",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
     "recompose": "^0.30.0"
@@ -32,5 +33,5 @@
   "bugs": {
     "url": "https://github.com/nuvemtecnologia/nimbos/issues"
   },
-  "gitHead": "5a17bee5a38a6bea83a9f0d823f2727d48f31196"
+  "gitHead": "8db13f593b86fcbb828d3acfe89d035a213e73b8"
 }

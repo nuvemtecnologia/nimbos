@@ -1,12 +1,15 @@
 {
   "name": "@nimbos/datepicker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "input datepicker",
   "keywords": [
     "html",
     "input",
     "datepicker"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Jossan Petrenko <jossanpetrenko@hotmail.com>",
   "homepage": "https://nuvemtecnologia.github.io/nimbos/tree/master/packages/datepicker#readme",
   "license": "ISC",
@@ -28,5 +31,5 @@
   "bugs": {
     "url": "https://github.com/nuvemtecnologia/nimbos/issues"
   },
-  "gitHead": "5a17bee5a38a6bea83a9f0d823f2727d48f31196"
+  "gitHead": "8db13f593b86fcbb828d3acfe89d035a213e73b8"
 }

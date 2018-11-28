@@ -1,4 +1,5 @@
 import { validate } from './validate';
+import { chain } from 'ramda';
 
 export function validations(...items) {
   return validate((getProps, fieldData) => {

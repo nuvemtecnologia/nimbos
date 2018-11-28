@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/layout",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -14,10 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@nimbos/core": "^0.1.3",
-    "@nimbos/styles": "^0.1.13"
+    "@nimbos/styles": "^0.1.14"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
-  "gitHead": "5a17bee5a38a6bea83a9f0d823f2727d48f31196"
+  "gitHead": "8db13f593b86fcbb828d3acfe89d035a213e73b8"
 }
