@@ -90,7 +90,7 @@ Checkbox.propTypes = {
   /** Checkbox se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Checkbox se torna desabilitado. */
+  /** Label para o Checkbox. */
   text: PropTypes.bool
 };
 Checkbox.Group = CheckboxGroup;

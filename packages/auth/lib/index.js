@@ -30,11 +30,10 @@ export * from './callback';
 var _internalUpdateUserManager = function _internalUpdateUserManager() {};
 
 export { userManager };
-export function authConfig(config) {
+export function authConfig(store, config) {
   _config.current = _objectSpread({}, _config.current, config);
   userManager.current = createUserManager(_config.current);
-
-  _internalUpdateUserManager(userManager.current);
+  loadUser(store, userManager);
 }
 export var AuthProvider =
 /*#__PURE__*/
@@ -62,23 +61,6 @@ function (_React$PureComponent) {
   }
 
   _createClass(AuthProvider, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      _internalUpdateUserManager = function _internalUpdateUserManager(userManager) {
-        _this2.setState({
-          userManager: userManager
-        });
-
-        loadUser(_this2.props.store, userManager);
-      };
-
-      if (this.state.userManager) {
-        loadUser(this.props.store, this.state.userManager);
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
