@@ -78,7 +78,7 @@ export function mapFormSimpleProps(props) {
       onChange = props.onChange,
       p = _objectWithoutProperties(props, ["data", "onChange"]);
 
-  var rawData = data;
+  var rawData = wrapFormData(data);
 
   var rawOnChange = function rawOnChange(data) {
     return onChange(data);

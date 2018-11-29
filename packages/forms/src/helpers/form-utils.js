@@ -48,7 +48,7 @@ export function wrapFormData(props) {
 export function mapFormSimpleProps(props) {
   const { data, onChange, ...p } = props;
 
-  const rawData = data;
+  const rawData = wrapFormData(data);
   const rawOnChange = data => onChange(data);
 
   return { ...p, data: rawData, onChange: rawOnChange };
