@@ -13,7 +13,7 @@ export default class Checkbox extends React.PureComponent {
 
   render() {
     const { disabled, text, children, value, ...othersProps } = this.props;
-    const { selectedValue, changeValue, parentName } = this.context;
+    const { selectedValue, changeValue, parentName, mapItemProps } = this.context;
 
     const currentValues = selectedValue || [];
     const checked = currentValues.includes(value);
@@ -31,6 +31,7 @@ export default class Checkbox extends React.PureComponent {
           value={value}
           onClick={() => changeValue(value, !checked)}
           data-test-id={`checkbox-${parentName || 'unique'}-${value}`}
+          {...(mapItemProps || (() => ({})))(this.props)}
           {...othersProps}
         />
         {this.renderText()}

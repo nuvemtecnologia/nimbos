@@ -63,12 +63,14 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           value = _this$props.value,
           children = _this$props.children,
-          name = _this$props.name;
+          name = _this$props.name,
+          mapItemProps = _this$props.mapItemProps;
       return React.createElement(CheckboxGroupContext.Provider, {
         value: {
           selectedValue: value,
           changeValue: this.handleCheckboxChange,
-          parentName: name
+          parentName: name,
+          mapItemProps: mapItemProps
         }
       }, children);
     }
