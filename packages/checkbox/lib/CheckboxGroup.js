@@ -62,11 +62,13 @@ function (_React$PureComponent) {
     value: function render() {
       var _this$props = this.props,
           value = _this$props.value,
-          children = _this$props.children;
+          children = _this$props.children,
+          name = _this$props.name;
       return React.createElement(CheckboxGroupContext.Provider, {
         value: {
           selectedValue: value,
-          changeValue: this.handleCheckboxChange
+          changeValue: this.handleCheckboxChange,
+          parentName: name
         }
       }, children);
     }

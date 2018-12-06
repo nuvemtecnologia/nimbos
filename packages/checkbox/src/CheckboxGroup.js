@@ -20,10 +20,12 @@ export default class CheckboxGroup extends React.PureComponent {
   }
 
   render() {
-    const { value, children } = this.props;
+    const { value, children, name } = this.props;
 
     return (
-      <CheckboxGroupContext.Provider value={{ selectedValue: value, changeValue: this.handleCheckboxChange }}>
+      <CheckboxGroupContext.Provider
+        value={{ selectedValue: value, changeValue: this.handleCheckboxChange, parentName: name }}
+      >
         {children}
       </CheckboxGroupContext.Provider>
     );

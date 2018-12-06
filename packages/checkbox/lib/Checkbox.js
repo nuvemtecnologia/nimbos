@@ -60,7 +60,8 @@ function (_React$PureComponent) {
 
       var _this$context = this.context,
           selectedValue = _this$context.selectedValue,
-          changeValue = _this$context.changeValue;
+          changeValue = _this$context.changeValue,
+          parentName = _this$context.parentName;
       var currentValues = selectedValue || [];
       var checked = currentValues.includes(value);
       var classList = css('n-checkbox', {
@@ -75,7 +76,8 @@ function (_React$PureComponent) {
         value: value,
         onClick: function onClick() {
           return changeValue(value, !checked);
-        }
+        },
+        "data-test-id": "checkbox-".concat(parentName || 'unique', "-").concat(value)
       }, othersProps)), this.renderText());
     }
   }]);
