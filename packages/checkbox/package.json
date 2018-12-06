@@ -14,7 +14,7 @@
     "@nimbos/core": "^0.1.5",
     "@nimbos/styles": "^0.1.16"
   },
-  "main": "lib/checkbox.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"

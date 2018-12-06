@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
 import CheckboxGroupContext from './CheckboxGroupContext';
+import CheckboxGroup from './CheckboxGroup';
 
 export default class Checkbox extends React.PureComponent {
   renderText() {
