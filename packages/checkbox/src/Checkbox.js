@@ -12,7 +12,7 @@ export default class Checkbox extends React.PureComponent {
   }
 
   render() {
-    const { disabled, text, children, ...othersProps } = this.props;
+    const { disabled, text, children, value, ...othersProps } = this.props;
     const { selectedValue, changeValue } = this.context;
 
     const currentValues = selectedValue || [];

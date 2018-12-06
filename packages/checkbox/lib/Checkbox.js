@@ -55,7 +55,8 @@ function (_React$PureComponent) {
           disabled = _this$props.disabled,
           text = _this$props.text,
           children = _this$props.children,
-          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "children"]);
+          value = _this$props.value,
+          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "children", "value"]);
 
       var _this$context = this.context,
           selectedValue = _this$context.selectedValue,
