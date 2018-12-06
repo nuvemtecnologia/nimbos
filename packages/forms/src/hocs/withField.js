@@ -9,7 +9,8 @@ export const mapDataToField = mapProps(function(props) {
   const { formData, ...p } = props;
 
   if (props.name) {
-    return { ...p, ...formData[props.name] };
+    const defaultData = '*' in formData ? formData['*'] : null;
+    return { ...p, ...formData[props.name], defaultData };
   }
 
   return props;

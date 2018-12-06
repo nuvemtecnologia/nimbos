@@ -32,6 +32,9 @@
     .n-layout-sidebar {
         width: $layout-sidebar-open-width;
     }
+    .n-layout-topbar {
+        left: $layout-sidebar-open-width;
+    }
     .n-layout-container {
         width: calc(100% - #{$layout-sidebar-open-width});
         margin-left: $layout-sidebar-open-width;
