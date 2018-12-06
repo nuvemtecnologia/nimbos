@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/entry",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nimbos/core": "^0.1.4",
+    "@nimbos/core": "^0.1.5",
     "@nimbos/styles": "^0.1.16"
   },
   "peerDependencies": {
