@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from '@nimbos/core';
-const { Consumer: SideMenuContext, Provider: SideMenuProvider } = React.createContext({});
+const context = React.createContext({});
+const { Consumer: SideMenuContext, Provider: SideMenuProvider } = context;
 
 function SideMenu({ children, inner, open, pinned, onMenuToggle, onPinToggle, onOverlayClick, className }) {
   const classes = css(
@@ -111,5 +112,6 @@ function SideMenuInnerListItem({ label, onSelect }) {
 SideMenu.Header = SideMenuHeader;
 SideMenu.List = SideMenuList;
 SideMenu.Inner = SideMenuInner;
+SideMenu.SideMenuContext = context;
 
 export default SideMenu;
