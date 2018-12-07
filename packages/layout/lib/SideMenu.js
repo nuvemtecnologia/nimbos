@@ -86,8 +86,9 @@ function SideMenuList(_ref5) {
       _onSelect = _ref5.onSelect;
   return React.createElement("ul", {
     className: "n-sidemenu-list"
-  }, items && items.map(function (item) {
+  }, items && items.map(function (item, i) {
     return React.createElement(SideMenuListItem, _extends({}, item, {
+      key: i,
       onSelect: function onSelect() {
         return _onSelect && _onSelect(item);
       },
@@ -133,8 +134,9 @@ function SideMenuInner(_ref7) {
     className: "n-sidemenu-inner-title"
   }, title), React.createElement("ul", {
     className: "n-sidemenu-inner-list"
-  }, items && items.map(function (item) {
+  }, items && items.map(function (item, i) {
     return React.createElement(SideMenuInnerListItem, _extends({}, item, {
+      key: i,
       onSelect: function onSelect() {
         return _onSelect2 && _onSelect2(item);
       }

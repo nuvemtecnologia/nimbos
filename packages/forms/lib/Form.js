@@ -196,6 +196,11 @@ function (_PureComponent) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.initValidations();
+    }
+  }, {
+    key: "initValidations",
+    value: function initValidations() {
       var data = this.props.data;
 
       for (var name in this.state.listeners) {
@@ -214,9 +219,19 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       var _this$props2 = this.props,
           data = _this$props2.data,
           children = _this$props2.children;
+
+      if (!this.initialized) {
+        this.initialized = true;
+        setTimeout(function () {
+          return _this4.initValidations();
+        });
+      }
+
       return React.createElement(FormHandlerProvider, {
         value: this.handlers
       }, React.createElement(FormDataProvider, {

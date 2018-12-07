@@ -57,8 +57,8 @@ function SideMenuList({ items, expanded, onSelect }) {
   return (
     <ul className="n-sidemenu-list">
       {items &&
-        items.map(item => (
-          <SideMenuListItem {...item} onSelect={() => onSelect && onSelect(item)} expanded={expanded == item} />
+        items.map((item, i) => (
+          <SideMenuListItem {...item} key={i} onSelect={() => onSelect && onSelect(item)} expanded={expanded == item} />
         ))}
     </ul>
   );
@@ -93,7 +93,10 @@ function SideMenuInner({ items, title, className, open, parentOpen, onSelect }) 
     <div className={classes}>
       <h1 className="n-sidemenu-inner-title">{title}</h1>
       <ul className="n-sidemenu-inner-list">
-        {items && items.map(item => <SideMenuInnerListItem {...item} onSelect={() => onSelect && onSelect(item)} />)}
+        {items &&
+          items.map((item, i) => (
+            <SideMenuInnerListItem {...item} key={i} onSelect={() => onSelect && onSelect(item)} />
+          ))}
       </ul>
     </div>
   );

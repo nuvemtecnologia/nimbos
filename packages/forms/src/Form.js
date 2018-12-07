@@ -100,6 +100,10 @@ class FormComponent extends PureComponent {
   }
 
   componentDidMount() {
+    this.initValidations();
+  }
+
+  initValidations() {
     let data = this.props.data;
 
     for (let name in this.state.listeners) {
@@ -118,6 +122,11 @@ class FormComponent extends PureComponent {
 
   render() {
     const { data, children } = this.props;
+
+    if (!this.initialized) {
+      this.initialized = true;
+      setTimeout(() => this.initValidations());
+    }
 
     return (
       <FormHandlerProvider value={this.handlers}>
