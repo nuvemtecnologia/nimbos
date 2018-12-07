@@ -30,6 +30,7 @@ export default class Checkbox extends React.PureComponent {
           disabled={disabled}
           value={value}
           onClick={() => changeValue(value, !checked)}
+          checked={checked}
           data-test-id={`checkbox-${parentName || 'unique'}-${value}`}
           {...(mapItemProps || (() => ({})))(this.props)}
           {...othersProps}

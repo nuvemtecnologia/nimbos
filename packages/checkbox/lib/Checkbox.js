@@ -78,6 +78,7 @@ function (_React$PureComponent) {
         onClick: function onClick() {
           return changeValue(value, !checked);
         },
+        checked: checked,
         "data-test-id": "checkbox-".concat(parentName || 'unique', "-").concat(value)
       }, (mapItemProps || function () {
         return {};
