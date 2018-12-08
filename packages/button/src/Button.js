@@ -30,7 +30,7 @@ export default class Button extends React.PureComponent {
       withIconBackground,
       ...othersProps
     } = this.props;
-
+    let props = othersProps;
     let classList = css('n-btn', {
       [`n-btn-${flavor}`]: !!flavor,
       'n-btn-outlined': outlined,
@@ -45,7 +45,7 @@ export default class Button extends React.PureComponent {
     }
 
     if (testName) {
-      othersProps = {
+      props = {
         ...othersProps,
         testName: testName,
         'data-test-id': `${testPrefix}-${testName}`
@@ -53,7 +53,7 @@ export default class Button extends React.PureComponent {
     }
 
     return (
-      <button className={classList} {...othersProps}>
+      <button className={classList} {...props}>
         {this.renderIcon('left')}
         {this.renderText()}
         {this.renderIcon('right')}

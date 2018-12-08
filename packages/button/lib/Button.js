@@ -10,8 +10,6 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -82,6 +80,7 @@ function (_React$PureComponent) {
           withIconBackground = _this$props2.withIconBackground,
           othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "testName", "icon", "iconRight", "withIconBackground"]);
 
+      var props = othersProps;
       var classList = css('n-btn', (_css = {}, _defineProperty(_css, "n-btn-".concat(flavor), !!flavor), _defineProperty(_css, 'n-btn-outlined', outlined), _defineProperty(_css, 'n-btn-flat', flat), _defineProperty(_css, 'n-btn-icon', icon), _defineProperty(_css, 'n-btn-icon-right', iconRight), _defineProperty(_css, 'with-icon-background', withIconBackground), _css));
 
       if (!children) {
@@ -89,15 +88,15 @@ function (_React$PureComponent) {
       }
 
       if (testName) {
-        othersProps = (_readOnlyError("othersProps"), _objectSpread({}, othersProps, {
+        props = _objectSpread({}, othersProps, {
           testName: testName,
           'data-test-id': "".concat(testPrefix, "-").concat(testName)
-        }));
+        });
       }
 
       return React.createElement("button", _extends({
         className: classList
-      }, othersProps), this.renderIcon('left'), this.renderText(), this.renderIcon('right'));
+      }, props), this.renderIcon('left'), this.renderText(), this.renderIcon('right'));
     }
   }]);
 
