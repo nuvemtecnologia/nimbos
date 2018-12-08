@@ -25,6 +25,7 @@ export default class Button extends React.PureComponent {
       outlined,
       flat,
       testName,
+      testPrefix,
       icon,
       iconRight,
       withIconBackground,

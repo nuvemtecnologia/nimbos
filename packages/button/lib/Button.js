@@ -75,10 +75,11 @@ function (_React$PureComponent) {
           outlined = _this$props2.outlined,
           flat = _this$props2.flat,
           testName = _this$props2.testName,
+          testPrefix = _this$props2.testPrefix,
           icon = _this$props2.icon,
           iconRight = _this$props2.iconRight,
           withIconBackground = _this$props2.withIconBackground,
-          othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "testName", "icon", "iconRight", "withIconBackground"]);
+          othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "testName", "testPrefix", "icon", "iconRight", "withIconBackground"]);
 
       var props = othersProps;
       var classList = css('n-btn', (_css = {}, _defineProperty(_css, "n-btn-".concat(flavor), !!flavor), _defineProperty(_css, 'n-btn-outlined', outlined), _defineProperty(_css, 'n-btn-flat', flat), _defineProperty(_css, 'n-btn-icon', icon), _defineProperty(_css, 'n-btn-icon-right', iconRight), _defineProperty(_css, 'with-icon-background', withIconBackground), _css));
