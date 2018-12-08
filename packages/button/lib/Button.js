@@ -2,11 +2,15 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -72,15 +76,23 @@ function (_React$PureComponent) {
           flavor = _this$props2.flavor,
           outlined = _this$props2.outlined,
           flat = _this$props2.flat,
+          testName = _this$props2.testName,
           icon = _this$props2.icon,
           iconRight = _this$props2.iconRight,
           withIconBackground = _this$props2.withIconBackground,
-          othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "icon", "iconRight", "withIconBackground"]);
+          othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "testName", "icon", "iconRight", "withIconBackground"]);
 
       var classList = css('n-btn', (_css = {}, _defineProperty(_css, "n-btn-".concat(flavor), !!flavor), _defineProperty(_css, 'n-btn-outlined', outlined), _defineProperty(_css, 'n-btn-flat', flat), _defineProperty(_css, 'n-btn-icon', icon), _defineProperty(_css, 'n-btn-icon-right', iconRight), _defineProperty(_css, 'with-icon-background', withIconBackground), _css));
 
       if (!children) {
         classList += ' n-btn-childrenless';
+      }
+
+      if (testName) {
+        othersProps = (_readOnlyError("othersProps"), _objectSpread({}, othersProps, {
+          testName: testName,
+          'data-test-id': "".concat(testPrefix, "-").concat(testName)
+        }));
       }
 
       return React.createElement("button", _extends({
@@ -116,6 +128,10 @@ Button.propTypes = {
   icon: PropTypes.string,
 
   /** Ícone no lado direito do botão. */
-  iconRight: PropTypes.bool
+  iconRight: PropTypes.bool,
+  testPrefix: PropTypes.string,
+  testName: PropTypes.string
 };
-Button.defaultProps = {};
+Button.defaultProps = {
+  testPrefix: 'button'
+};
