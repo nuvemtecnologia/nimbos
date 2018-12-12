@@ -54,30 +54,34 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           disabled = _this$props.disabled,
           text = _this$props.text,
-          value = _this$props.value,
           children = _this$props.children,
-          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "value", "children"]);
+          value = _this$props.value,
+          othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "children", "value"]);
 
-      console.log(this.props);
+      var _this$context = this.context,
+          selectedValue = _this$context.selectedValue,
+          changeValue = _this$context.changeValue,
+          parentName = _this$context.parentName,
+          mapItemProps = _this$context.mapItemProps;
+      var checked = selectedValue == value;
       var classList = css('n-radio', {
         'n-radio-disabled': disabled,
         'n-radio-text': text
       });
-      var _this$context = this.context,
-          selectedValue = _this$context.selectedValue,
-          changeValue = _this$context.changeValue;
-      var checked = selectedValue === value;
       return React.createElement("label", {
         className: classList
       }, React.createElement("input", _extends({
         type: "radio",
-        checked: checked,
+        disabled: disabled,
         value: value,
-        onChange: function onChange() {
+        onClick: function onClick() {
           return changeValue(value);
         },
-        disabled: disabled
-      }, othersProps)), this.renderText(text));
+        checked: checked,
+        "data-test-id": "radio-".concat(parentName || 'unique', "-").concat(value)
+      }, (mapItemProps || function () {
+        return {};
+      })(this.props), othersProps)), this.renderText());
     }
   }]);
 
@@ -85,6 +89,7 @@ function (_React$PureComponent) {
 }(React.PureComponent);
 
 export { Radio as default };
+Radio.contextType = RadioGroupContext;
 Radio.propTypes = {
   /** Dispara a função onChange. */
   onChange: PropTypes.func,
@@ -92,12 +97,8 @@ Radio.propTypes = {
   /** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Texto do radio. */
-  text: PropTypes.bool,
-
-  /** Radio se torna selecionado. */
-  checked: PropTypes.bool
+  /** Label para o Radio. */
+  text: PropTypes.bool
 };
-Radio.defaultProps = {};
 Radio.Group = RadioGroup;
-Radio.contextType = RadioGroupContext;
+Radio.defaultProps = {};

@@ -12,10 +12,12 @@ export default class RadioGroup extends React.PureComponent {
   }
 
   render() {
-    const { value, children } = this.props;
+    const { value, children, name, mapItemProps } = this.props;
 
     return (
-      <RadioGroupContext.Provider value={{ selectedValue: value, changeValue: this.handleRadioChange }}>
+      <RadioGroupContext.Provider
+        value={{ selectedValue: value, changeValue: this.handleRadioChange, parentName: name, mapItemProps }}
+      >
         {children}
       </RadioGroupContext.Provider>
     );

@@ -12,33 +12,35 @@ export default class Radio extends React.PureComponent {
   }
 
   render() {
-    const { disabled, text, value, children, ...othersProps } = this.props;
-    console.log(this.props);
+    const { disabled, text, children, value, ...othersProps } = this.props;
+    const { selectedValue, changeValue, parentName, mapItemProps } = this.context;
 
-    let classList = css('n-radio', {
+    const checked = selectedValue == value;
+
+    const classList = css('n-radio', {
       'n-radio-disabled': disabled,
       'n-radio-text': text
     });
-
-    const { selectedValue, changeValue } = this.context;
-
-    const checked = selectedValue === value;
 
     return (
       <label className={classList}>
         <input
           type="radio"
-          checked={checked}
-          value={value}
-          onChange={() => changeValue(value)}
           disabled={disabled}
+          value={value}
+          onClick={() => changeValue(value)}
+          checked={checked}
+          data-test-id={`radio-${parentName || 'unique'}-${value}`}
+          {...(mapItemProps || (() => ({})))(this.props)}
           {...othersProps}
         />
-        {this.renderText(text)}
+        {this.renderText()}
       </label>
     );
   }
 }
+
+Radio.contextType = RadioGroupContext;
 
 Radio.propTypes = {
   /** Dispara a função onChange. */
@@ -47,15 +49,10 @@ Radio.propTypes = {
   /** Radio se torna desabilitado. */
   disabled: PropTypes.bool,
 
-  /** Texto do radio. */
-  text: PropTypes.bool,
-
-  /** Radio se torna selecionado. */
-  checked: PropTypes.bool
+  /** Label para o Radio. */
+  text: PropTypes.bool
 };
-
-Radio.defaultProps = {};
 
 Radio.Group = RadioGroup;
 
-Radio.contextType = RadioGroupContext;
+Radio.defaultProps = {};

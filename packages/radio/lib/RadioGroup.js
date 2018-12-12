@@ -44,11 +44,15 @@ function (_React$PureComponent) {
     value: function render() {
       var _this$props = this.props,
           value = _this$props.value,
-          children = _this$props.children;
+          children = _this$props.children,
+          name = _this$props.name,
+          mapItemProps = _this$props.mapItemProps;
       return React.createElement(RadioGroupContext.Provider, {
         value: {
           selectedValue: value,
-          changeValue: this.handleRadioChange
+          changeValue: this.handleRadioChange,
+          parentName: name,
+          mapItemProps: mapItemProps
         }
       }, children);
     }
