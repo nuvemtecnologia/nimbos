@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@nimbos/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -26,10 +41,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@nimbos/core';
-
 var Button =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -50,7 +61,7 @@ function (_React$PureComponent) {
       if (!icon) return null;
       if (position == 'right' && !iconRight) return null;
       if (position == 'left' && iconRight) return null;
-      return React.createElement("span", {
+      return _react.default.createElement("span", {
         className: "n-btn-icon-element ".concat(icon)
       });
     }
@@ -59,7 +70,7 @@ function (_React$PureComponent) {
     value: function renderText() {
       var children = this.props.children;
       if (!children) return null;
-      return React.createElement("span", {
+      return _react.default.createElement("span", {
         className: "n-btn-text-content",
         children: children
       });
@@ -82,7 +93,7 @@ function (_React$PureComponent) {
           othersProps = _objectWithoutProperties(_this$props2, ["children", "flavor", "outlined", "flat", "testName", "testPrefix", "icon", "iconRight", "withIconBackground"]);
 
       var props = othersProps;
-      var classList = css('n-btn', (_css = {}, _defineProperty(_css, "n-btn-".concat(flavor), !!flavor), _defineProperty(_css, 'n-btn-outlined', outlined), _defineProperty(_css, 'n-btn-flat', flat), _defineProperty(_css, 'n-btn-icon', icon), _defineProperty(_css, 'n-btn-icon-right', iconRight), _defineProperty(_css, 'with-icon-background', withIconBackground), _css));
+      var classList = (0, _core.css)('n-btn', (_css = {}, _defineProperty(_css, "n-btn-".concat(flavor), !!flavor), _defineProperty(_css, 'n-btn-outlined', outlined), _defineProperty(_css, 'n-btn-flat', flat), _defineProperty(_css, 'n-btn-icon', icon), _defineProperty(_css, 'n-btn-icon-right', iconRight), _defineProperty(_css, 'with-icon-background', withIconBackground), _css));
 
       if (!children) {
         classList += ' n-btn-childrenless';
@@ -95,42 +106,42 @@ function (_React$PureComponent) {
         });
       }
 
-      return React.createElement("button", _extends({
+      return _react.default.createElement("button", _extends({
         className: classList
       }, props), this.renderIcon('left'), this.renderText(), this.renderIcon('right'));
     }
   }]);
 
   return Button;
-}(React.PureComponent);
+}(_react.default.PureComponent);
 
-export { Button as default };
+exports.default = Button;
 Button.propTypes = {
   /** Conteudo do botão. */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node]),
+  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element, _propTypes.default.node]),
 
   /** Dispara a função onClick. */
-  onClick: PropTypes.func,
+  onClick: _propTypes.default.func,
 
   /** Estilo de intenção do botão. */
-  flavor: PropTypes.oneOfType([PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info'])]),
+  flavor: _propTypes.default.oneOfType([_propTypes.default.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info'])]),
 
   /** Botão se torna desabilitado. */
-  disabled: PropTypes.bool,
+  disabled: _propTypes.default.bool,
 
   /** Botão se torna estilo flat. */
-  flat: PropTypes.bool,
+  flat: _propTypes.default.bool,
 
   /** Botão se torna estilo outlined. */
-  outlined: PropTypes.bool,
+  outlined: _propTypes.default.bool,
 
   /** Botão usa ícone. */
-  icon: PropTypes.string,
+  icon: _propTypes.default.string,
 
   /** Ícone no lado direito do botão. */
-  iconRight: PropTypes.bool,
-  testPrefix: PropTypes.string,
-  testName: PropTypes.string
+  iconRight: _propTypes.default.bool,
+  testPrefix: _propTypes.default.string,
+  testName: _propTypes.default.string
 };
 Button.defaultProps = {
   testPrefix: 'button'

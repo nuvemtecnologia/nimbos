@@ -1,6 +1,14 @@
-import { lifecycle } from "recompose";
-export function validate(namesToRegister, validateFn) {
-  if (typeof validateFn == "undefined") {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.validate = validate;
+
+var _recompose = require("recompose");
+
+function validate(namesToRegister, validateFn) {
+  if (typeof validateFn == 'undefined') {
     validateFn = namesToRegister;
 
     namesToRegister = function namesToRegister(props) {
@@ -8,7 +16,7 @@ export function validate(namesToRegister, validateFn) {
     };
   }
 
-  return lifecycle({
+  return (0, _recompose.compose)((0, _recompose.withState)('unsubscribe', 'setUnsubscribe'), (0, _recompose.lifecycle)({
     componentDidMount: function componentDidMount() {
       var _this = this;
 
@@ -17,14 +25,12 @@ export function validate(namesToRegister, validateFn) {
         return _this.props;
       });
       fn.onlyField = true;
-      this.setState({
-        unsubscribe: this.props.formHandlers.subscribe(names, fn)
-      });
+      this.props.setUnsubscribe(this.props.formHandlers.subscribe(names, fn));
     },
     componentWillUnmount: function componentWillUnmount() {
-      if (this.state.unsubscribe) {
-        this.state.unsubscribe();
+      if (this.props.unsubscribe) {
+        this.props.unsubscribe();
       }
     }
-  });
+  }));
 }

@@ -41,7 +41,9 @@ class FormComponent extends PureComponent {
       this.setState(() => {
         let listeners = this.state.listeners;
         for (let uns in unsubscribes) {
-          listeners = uns(listeners);
+          if (typeof uns === 'function') {
+            listeners = uns(listeners);
+          }
         }
         return {
           listeners
@@ -52,8 +54,6 @@ class FormComponent extends PureComponent {
 
   setField(name, fieldData, validate = true) {
     const { data, onChange } = this.props;
-
-    console.log('setField', name, fieldData);
 
     const newData = {
       ...data,

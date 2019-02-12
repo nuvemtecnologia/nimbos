@@ -1,12 +1,22 @@
-import axios from 'axios';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.httpFactory = void 0;
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _instances = new Map();
 
-_instances.set('default', axios);
+_instances.set('default', _axios.default);
 
 function register(config) {
   var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'default';
-  var instance = axios.create(config);
+
+  var instance = _axios.default.create(config);
 
   _instances.set(name, instance);
 }
@@ -16,7 +26,8 @@ function create() {
   return _instances.get(name);
 }
 
-export var httpFactory = {
+var httpFactory = {
   register: register,
   create: create
 };
+exports.httpFactory = httpFactory;

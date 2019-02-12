@@ -14,6 +14,10 @@ export function debounceFieldProperty(delayMs = 150, stateName = 'value', onChan
         this.update = debounce(update, delayMs);
       }
 
+      componentDidMount() {
+        this.setState({ [stateName]: this.props.value });
+      }
+
       componentDidUpdate(prevProps) {
         if (prevProps.value !== this.props.value) {
           this.setState({ [stateName]: this.props.value });

@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@nimbos/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -22,10 +37,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@nimbos/core';
-
 var Datepicker =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -42,7 +53,7 @@ function (_React$PureComponent) {
     value: function renderText() {
       var text = this.props.text;
       if (!text) return null;
-      return React.createElement("span", {
+      return _react.default.createElement("span", {
         className: "n-datepicker-text-content"
       }, text);
     }
@@ -56,13 +67,13 @@ function (_React$PureComponent) {
           value = _this$props.value,
           othersProps = _objectWithoutProperties(_this$props, ["disabled", "text", "children", "value"]);
 
-      var classList = css('n-datepicker', {
+      var classList = (0, _core.css)('n-datepicker', {
         'n-datepicker-disabled': disabled,
         'n-datepicker-text': text
       });
-      return React.createElement("label", {
+      return _react.default.createElement("label", {
         className: classList
-      }, this.renderText(), React.createElement("input", _extends({
+      }, this.renderText(), _react.default.createElement("input", _extends({
         className: "n-datepicker-input",
         type: "date",
         disabled: disabled,
@@ -72,16 +83,16 @@ function (_React$PureComponent) {
   }]);
 
   return Datepicker;
-}(React.PureComponent);
+}(_react.default.PureComponent);
 
-export { Datepicker as default };
+exports.default = Datepicker;
 Datepicker.propTypes = {
   /** Dispara a função onChange. */
-  onChange: PropTypes.func,
+  onChange: _propTypes.default.func,
 
   /** Datepicker se torna desabilitado. */
-  disabled: PropTypes.bool,
+  disabled: _propTypes.default.bool,
 
   /** Label para o datepicker. */
-  text: PropTypes.bool
+  text: _propTypes.default.bool
 };
