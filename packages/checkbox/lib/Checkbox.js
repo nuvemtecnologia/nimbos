@@ -1,3 +1,22 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@nimbos/core");
+
+var _CheckboxGroupContext = _interopRequireDefault(require("./CheckboxGroupContext"));
+
+var _CheckboxGroup = _interopRequireDefault(require("./CheckboxGroup"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -22,12 +41,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@nimbos/core';
-import CheckboxGroupContext from './CheckboxGroupContext';
-import CheckboxGroup from './CheckboxGroup';
-
 var Checkbox =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -44,7 +57,7 @@ function (_React$PureComponent) {
     value: function renderText() {
       var text = this.props.text;
       if (!text) return null;
-      return React.createElement("span", {
+      return _react.default.createElement("span", {
         className: "n-checkbox-text-content"
       }, text);
     }
@@ -65,13 +78,13 @@ function (_React$PureComponent) {
           mapItemProps = _this$context.mapItemProps;
       var currentValues = selectedValue || [];
       var checked = currentValues.includes(value);
-      var classList = css('n-checkbox', {
+      var classList = (0, _core.css)('n-checkbox', {
         'n-checkbox-disabled': disabled,
         'n-checkbox-text': text
       });
-      return React.createElement("label", {
+      return _react.default.createElement("label", {
         className: classList
-      }, React.createElement("input", _extends({
+      }, _react.default.createElement("input", _extends({
         type: "checkbox",
         disabled: disabled,
         value: value,
@@ -87,19 +100,19 @@ function (_React$PureComponent) {
   }]);
 
   return Checkbox;
-}(React.PureComponent);
+}(_react.default.PureComponent);
 
-export { Checkbox as default };
-Checkbox.contextType = CheckboxGroupContext;
+exports.default = Checkbox;
+Checkbox.contextType = _CheckboxGroupContext.default;
 Checkbox.propTypes = {
   /** Dispara a função onChange. */
-  onChange: PropTypes.func,
+  onChange: _propTypes.default.func,
 
   /** Checkbox se torna desabilitado. */
-  disabled: PropTypes.bool,
+  disabled: _propTypes.default.bool,
 
   /** Label para o Checkbox. */
-  text: PropTypes.bool
+  text: _propTypes.default.bool
 };
-Checkbox.Group = CheckboxGroup;
+Checkbox.Group = _CheckboxGroup.default;
 Checkbox.defaultProps = {};

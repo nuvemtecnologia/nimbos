@@ -1,3 +1,23 @@
-import Text from './Text';
-import Label from './Label';
-export { Text, Label };
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Text", {
+  enumerable: true,
+  get: function get() {
+    return _Text.default;
+  }
+});
+Object.defineProperty(exports, "Label", {
+  enumerable: true,
+  get: function get() {
+    return _Label.default;
+  }
+});
+
+var _Text = _interopRequireDefault(require("./Text"));
+
+var _Label = _interopRequireDefault(require("./Label"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

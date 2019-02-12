@@ -1,3 +1,15 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.withField = withField;
+exports.mapDataToField = exports.withFormHandlersContext = exports.withFormDataContext = void 0;
+
+var _formContext = require("../helpers/form-context");
+
+var _recompose = require("recompose");
+
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -6,19 +18,19 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import { FormDataConsumer, FormHandlerConsumer } from '../helpers/form-context';
-import { fromRenderProps, compose, mapProps, setDisplayName, wrapDisplayName, pure } from 'recompose';
-export var withFormDataContext = fromRenderProps(FormDataConsumer, function (data) {
+var withFormDataContext = (0, _recompose.fromRenderProps)(_formContext.FormDataConsumer, function (data) {
   return {
     formData: data
   };
 });
-export var withFormHandlersContext = fromRenderProps(FormHandlerConsumer, function (handlers) {
+exports.withFormDataContext = withFormDataContext;
+var withFormHandlersContext = (0, _recompose.fromRenderProps)(_formContext.FormHandlerConsumer, function (handlers) {
   return {
     formHandlers: handlers
   };
 });
-export var mapDataToField = mapProps(function (props) {
+exports.withFormHandlersContext = withFormHandlersContext;
+var mapDataToField = (0, _recompose.mapProps)(function (props) {
   var formData = props.formData,
       p = _objectWithoutProperties(props, ["formData"]);
 
@@ -31,7 +43,9 @@ export var mapDataToField = mapProps(function (props) {
 
   return props;
 });
-export function withField() {
+exports.mapDataToField = mapDataToField;
+
+function withField() {
   var withHandlers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
   for (var _len = arguments.length, extraHocs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -47,8 +61,8 @@ export function withField() {
 
     hocs.push(withFormDataContext);
     hocs.push(mapDataToField);
-    hocs.push(pure);
+    hocs.push(_recompose.pure);
     hocs.push.apply(hocs, extraHocs);
-    return compose.apply(void 0, hocs)(component);
+    return _recompose.compose.apply(void 0, hocs)(component);
   };
 }

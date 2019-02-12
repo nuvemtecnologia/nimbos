@@ -1,3 +1,22 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@nimbos/core");
+
+var _Label = _interopRequireDefault(require("./Label"));
+
+var _v = _interopRequireDefault(require("uuid/v4"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -22,12 +41,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@nimbos/core';
-import Label from './Label';
-import uuid from 'uuid/v4';
-
 var Text =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -40,7 +53,7 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
     _this.state = {
-      id: props.id || "Text-".concat(uuid())
+      id: props.id || "Text-".concat((0, _v.default)())
     };
     return _this;
   }
@@ -50,10 +63,10 @@ function (_React$PureComponent) {
     value: function handleIcon(icon, onClick) {
       var orientation = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'right';
       if (!icon) return;
-      var classIcon = css('n-entry-icon', orientation, {
+      var classIcon = (0, _core.css)('n-entry-icon', orientation, {
         'n-entry-icon-clicable': onClick
       }, icon);
-      return React.createElement("span", {
+      return _react.default.createElement("span", {
         onClick: onClick,
         className: classIcon
       });
@@ -73,14 +86,14 @@ function (_React$PureComponent) {
           onIconLeftClick = _this$props.onIconLeftClick,
           othersProps = _objectWithoutProperties(_this$props, ["children", "placeholder", "label", "width", "iconRight", "iconLeft", "className", "onIconRightClick", "onIconLeftClick"]);
 
-      var classInput = css('n-entry', className);
+      var classInput = (0, _core.css)('n-entry', className);
       var Element = 'input';
 
       if (othersProps.type == 'textarea') {
         Element = 'textarea';
       }
 
-      return React.createElement("span", null, React.createElement(Element, _extends({
+      return _react.default.createElement("span", null, _react.default.createElement(Element, _extends({
         className: classInput,
         placeholder: placeholder,
         id: this.state.id
@@ -89,8 +102,8 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var classRoot = css('n-entry-root');
-      var classContainer = css('n-entry-container', {
+      var classRoot = (0, _core.css)('n-entry-root');
+      var classContainer = (0, _core.css)('n-entry-container', {
         'n-input-icon-left': this.props.iconLeft,
         'n-input-icon-right': this.props.iconRight
       });
@@ -99,18 +112,18 @@ function (_React$PureComponent) {
           width = _this$props2.width;
 
       if ('label' in this.props) {
-        return React.createElement("div", {
+        return _react.default.createElement("div", {
           className: classRoot,
           style: {
             width: width
           }
-        }, React.createElement(Label, {
+        }, _react.default.createElement(_Label.default, {
           htmlFor: this.state.id
-        }, label), React.createElement("div", {
+        }, label), _react.default.createElement("div", {
           className: classContainer
         }, this.renderInput()));
       } else {
-        return React.createElement("div", {
+        return _react.default.createElement("div", {
           style: {
             width: width,
             boxSizing: 'border-box'
@@ -122,27 +135,27 @@ function (_React$PureComponent) {
   }]);
 
   return Text;
-}(React.PureComponent);
+}(_react.default.PureComponent);
 
-export { Text as default };
+exports.default = Text;
 Text.propTypes = {
   /** Rótulo do input. */
-  label: PropTypes.PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  label: _propTypes.default.PropTypes.oneOfType([_propTypes.default.string, _propTypes.default.bool]),
 
   /** Placeholder do input. */
-  placeholder: PropTypes.string,
+  placeholder: _propTypes.default.string,
 
   /** Input desabilitado. */
-  disabled: PropTypes.bool,
+  disabled: _propTypes.default.bool,
 
   /** Tamanho horizontal do input. */
-  width: PropTypes.string,
+  width: _propTypes.default.string,
 
   /** Ícone no entry a esquerda. */
-  iconLeft: PropTypes.string,
+  iconLeft: _propTypes.default.string,
 
   /** Ícone no entry a direita. */
-  iconRight: PropTypes.string
+  iconRight: _propTypes.default.string
 };
 Text.defaultProps = {
   width: '100%'

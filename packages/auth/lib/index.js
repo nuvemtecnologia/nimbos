@@ -1,3 +1,54 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _exportNames = {
+  authConfig: true,
+  AuthProvider: true,
+  userManager: true,
+  reducer: true
+};
+exports.authConfig = authConfig;
+Object.defineProperty(exports, "userManager", {
+  enumerable: true,
+  get: function get() {
+    return _userManager.userManager;
+  }
+});
+Object.defineProperty(exports, "reducer", {
+  enumerable: true,
+  get: function get() {
+    return _reducer.reducer;
+  }
+});
+exports.AuthProvider = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reduxOidc = require("redux-oidc");
+
+var _userManager = require("./user-manager");
+
+var _guard = _interopRequireDefault(require("./guard"));
+
+var _reducer = require("./reducer");
+
+var _callback = require("./callback");
+
+Object.keys(_callback).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _callback[key];
+    }
+  });
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20,19 +71,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React from 'react';
-import { createUserManager, OidcProvider, loadUser } from 'redux-oidc';
-import { userManager, config as _config } from './user-manager';
-import AuthGuard from './guard';
-export { reducer } from './reducer';
-export * from './callback';
-export { userManager };
-export function authConfig(store, config) {
-  _config.current = _objectSpread({}, _config.current, config);
-  userManager.current = createUserManager(_config.current);
-  loadUser(store, userManager.current);
+function authConfig(store, config) {
+  _userManager.config.current = _objectSpread({}, _userManager.config.current, config);
+  _userManager.userManager.current = (0, _reduxOidc.createUserManager)(_userManager.config.current);
+  (0, _reduxOidc.loadUser)(store, _userManager.userManager.current);
 }
-export var AuthProvider =
+
+var AuthProvider =
 /*#__PURE__*/
 function (_React$PureComponent) {
   _inherits(AuthProvider, _React$PureComponent);
@@ -49,12 +94,14 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           children = _this$props.children,
           store = _this$props.store;
-      return React.createElement(OidcProvider, {
+      return _react.default.createElement(_reduxOidc.OidcProvider, {
         store: store,
-        userManager: userManager.current
-      }, React.createElement(AuthGuard, null, children));
+        userManager: _userManager.userManager.current
+      }, _react.default.createElement(_guard.default, null, children));
     }
   }]);
 
   return AuthProvider;
-}(React.PureComponent);
+}(_react.default.PureComponent);
+
+exports.AuthProvider = AuthProvider;

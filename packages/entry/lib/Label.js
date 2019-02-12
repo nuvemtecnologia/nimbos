@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@nimbos/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -22,10 +37,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@nimbos/core';
-
 var Label =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -44,22 +55,22 @@ function (_React$PureComponent) {
           children = _this$props.children,
           othersProps = _objectWithoutProperties(_this$props, ["children"]);
 
-      var classList = css('n-entry-label');
-      return React.createElement("label", _extends({
+      var classList = (0, _core.css)('n-entry-label');
+      return _react.default.createElement("label", _extends({
         className: classList
       }, othersProps), children);
     }
   }]);
 
   return Label;
-}(React.PureComponent);
+}(_react.default.PureComponent);
 
-export { Label as default };
+exports.default = Label;
 Label.propTypes = {
   /** Conteúdo da label. */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node, PropTypes.bool]),
+  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element, _propTypes.default.node, _propTypes.default.bool]),
 
   /** Rótulo para indicar ID. */
-  htmlFor: PropTypes.string
+  htmlFor: _propTypes.default.string
 };
 Label.defaultProps = {};

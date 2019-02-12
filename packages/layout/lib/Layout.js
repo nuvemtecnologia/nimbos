@@ -1,23 +1,33 @@
-import React from 'react';
-import { css } from '@nimbos/core';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _core = require("@nimbos/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Sidebar(_ref) {
   var children = _ref.children;
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: "n-layout-sidebar"
   }, children);
 }
 
 function Topbar(_ref2) {
   var children = _ref2.children;
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: "n-layout-topbar"
   }, children);
 }
 
 function Container(_ref3) {
   var children = _ref3.children;
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: "n-layout-container"
   }, children);
 }
@@ -25,10 +35,10 @@ function Container(_ref3) {
 function Layout(_ref4) {
   var children = _ref4.children,
       sidebarExpanded = _ref4.sidebarExpanded;
-  var classes = css('n-layout', {
+  var classes = (0, _core.css)('n-layout', {
     'n-layout-sidebar-expanded': sidebarExpanded
   });
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: classes
   }, children);
 }
@@ -36,4 +46,5 @@ function Layout(_ref4) {
 Layout.Topbar = Topbar;
 Layout.Sidebar = Sidebar;
 Layout.Container = Container;
-export default Layout;
+var _default = Layout;
+exports.default = _default;
