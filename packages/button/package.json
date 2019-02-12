@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/button",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nimbos/core": "^0.1.6",
-    "@nimbos/styles": "^0.1.16"
+    "@nimbos/core": "^0.1.7",
+    "@nimbos/styles": "^0.1.17"
   },
   "peerDependencies": {
     "react": "^16.0.0"
