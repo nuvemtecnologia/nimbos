@@ -30,6 +30,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "pub": "lerna publish",
+    "pub:force": "lerna publish --force-publish",
     "compile": "lerna exec --no-bail -- babel src -d lib --config-file ../../.babelrc",
     "precompile": "rm -rf ./packages/**/lib"
   },
