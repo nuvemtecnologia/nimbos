@@ -13,8 +13,6 @@ var _core = require("@nimbos/core");
 
 var _Label = _interopRequireDefault(require("./Label"));
 
-var _v = _interopRequireDefault(require("uuid/v4"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -53,7 +51,7 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
     _this.state = {
-      id: props.id || "Text-".concat((0, _v.default)())
+      id: props.id || "Text-".concat(uuid())
     };
     return _this;
   }
@@ -84,7 +82,8 @@ function (_React$PureComponent) {
           className = _this$props.className,
           onIconRightClick = _this$props.onIconRightClick,
           onIconLeftClick = _this$props.onIconLeftClick,
-          othersProps = _objectWithoutProperties(_this$props, ["children", "placeholder", "label", "width", "iconRight", "iconLeft", "className", "onIconRightClick", "onIconLeftClick"]);
+          inputRef = _this$props.inputRef,
+          othersProps = _objectWithoutProperties(_this$props, ["children", "placeholder", "label", "width", "iconRight", "iconLeft", "className", "onIconRightClick", "onIconLeftClick", "inputRef"]);
 
       var classInput = (0, _core.css)('n-entry', className);
       var Element = 'input';
@@ -96,7 +95,8 @@ function (_React$PureComponent) {
       return _react.default.createElement("span", null, _react.default.createElement(Element, _extends({
         className: classInput,
         placeholder: placeholder,
-        id: this.state.id
+        id: this.props.id || "input-".concat(this.props.name),
+        ref: inputRef
       }, othersProps)), this.handleIcon(iconLeft, onIconLeftClick, 'left'), this.handleIcon(iconRight, onIconRightClick, 'right'));
     }
   }, {
@@ -118,7 +118,7 @@ function (_React$PureComponent) {
             width: width
           }
         }, _react.default.createElement(_Label.default, {
-          htmlFor: this.state.id
+          htmlFor: this.props.id || "input-".concat(this.props.name)
         }, label), _react.default.createElement("div", {
           className: classContainer
         }, this.renderInput()));

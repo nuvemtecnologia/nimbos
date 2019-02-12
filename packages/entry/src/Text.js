@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@nimbos/core';
 import Label from './Label';
-import uuid from 'uuid/v4';
 
 export default class Text extends React.PureComponent {
   constructor(props) {
@@ -34,6 +33,7 @@ export default class Text extends React.PureComponent {
       className,
       onIconRightClick,
       onIconLeftClick,
+      inputRef,
       ...othersProps
     } = this.props;
 
@@ -47,7 +47,13 @@ export default class Text extends React.PureComponent {
 
     return (
       <span>
-        <Element className={classInput} placeholder={placeholder} id={this.state.id} {...othersProps} />
+        <Element
+          className={classInput}
+          placeholder={placeholder}
+          id={this.props.id || `input-${this.props.name}`}
+          ref={inputRef}
+          {...othersProps}
+        />
         {this.handleIcon(iconLeft, onIconLeftClick, 'left')}
         {this.handleIcon(iconRight, onIconRightClick, 'right')}
       </span>
@@ -67,7 +73,7 @@ export default class Text extends React.PureComponent {
     if ('label' in this.props) {
       return (
         <div className={classRoot} style={{ width }}>
-          <Label htmlFor={this.state.id}>{label}</Label>
+          <Label htmlFor={this.props.id || `input-${this.props.name}`}>{label}</Label>
           <div className={classContainer}>{this.renderInput()}</div>
         </div>
       );
