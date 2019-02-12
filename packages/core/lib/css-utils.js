@@ -1,11 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.css = css;
-
-function css() {
+export function css() {
   var classes = [];
 
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {

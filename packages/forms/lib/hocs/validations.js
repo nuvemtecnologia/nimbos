@@ -1,23 +1,14 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.validations = validations;
-
-var _validate = require("./validate");
-
-var _ramda = require("ramda");
-
-function validations() {
+import { validate } from './validate';
+import { chain } from 'ramda';
+export function validations() {
   for (var _len = arguments.length, items = new Array(_len), _key = 0; _key < _len; _key++) {
     items[_key] = arguments[_key];
   }
 
-  return (0, _validate.validate)(function (getProps, fieldData) {
+  return validate(function (getProps, fieldData) {
     var props = getProps();
     var error = props.error;
-    var result = (0, _ramda.chain)(function (fn) {
+    var result = chain(function (fn) {
       return fn(props, fieldData);
     }, items);
     var errorResult = result.filter(function (x) {

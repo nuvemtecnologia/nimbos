@@ -1,16 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _flat = _interopRequireDefault(require("flat"));
-
-var _compile = _interopRequireDefault(require("string-template/compile"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -21,6 +10,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+import flatten from 'flat';
+import compile from 'string-template/compile';
 var _countProperties = ['count', 'number', 'size', '0', 'length', 'items'];
 var _languageSet = {};
 var _defaultLang = 'pt-BR';
@@ -87,7 +78,7 @@ i18n.register = function (lang, keys) {
   }
 
   var langMap = _languageSet[lang];
-  keys = (0, _flat.default)(keys, {
+  keys = flatten(keys, {
     safe: true
   });
   Object.entries(keys).forEach(function (_ref) {
@@ -97,16 +88,15 @@ i18n.register = function (lang, keys) {
 
     if (value instanceof Array) {
       var translates = value.map(function (v) {
-        return (0, _compile.default)(v, true);
+        return compile(v, true);
       });
       value = translates;
       langMap.set(key, value);
       return;
     }
 
-    langMap.set(key, (0, _compile.default)(value, true));
+    langMap.set(key, compile(value, true));
   });
 };
 
-var _default = i18n;
-exports.default = _default;
+export default i18n;

@@ -1,16 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _CheckboxGroupContext = _interopRequireDefault(require("./CheckboxGroupContext"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
@@ -36,6 +23,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+import React from 'react';
+import CheckboxGroupContext from './CheckboxGroupContext';
 
 var CheckboxGroup =
 /*#__PURE__*/
@@ -75,7 +65,7 @@ function (_React$PureComponent) {
           children = _this$props.children,
           name = _this$props.name,
           mapItemProps = _this$props.mapItemProps;
-      return _react.default.createElement(_CheckboxGroupContext.default.Provider, {
+      return React.createElement(CheckboxGroupContext.Provider, {
         value: {
           selectedValue: value,
           changeValue: this.handleCheckboxChange,
@@ -87,6 +77,6 @@ function (_React$PureComponent) {
   }]);
 
   return CheckboxGroup;
-}(_react.default.PureComponent);
+}(React.PureComponent);
 
-exports.default = CheckboxGroup;
+export { CheckboxGroup as default };

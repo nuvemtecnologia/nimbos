@@ -1,14 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _reactRedux = require("react-redux");
-
-var _userManager = require("./user-manager");
-
+import { connect } from 'react-redux';
+import { goToLogin } from './user-manager';
 var goingToLogin = false;
 var isSilentRenew = false;
 
@@ -27,7 +18,7 @@ function AuthGuard(_ref) {
   if (LOGOUT_STATUS && !loading) {
     if (goingToLogin) return null;
     goingToLogin = true;
-    (0, _userManager.goToLogin)();
+    goToLogin();
     return null;
   }
 
@@ -41,6 +32,4 @@ var mapStateToProps = function mapStateToProps(state, props) {
   };
 };
 
-var _default = (0, _reactRedux.connect)(mapStateToProps, null)(AuthGuard);
-
-exports.default = _default;
+export default connect(mapStateToProps, null)(AuthGuard);

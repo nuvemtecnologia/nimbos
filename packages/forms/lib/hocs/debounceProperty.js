@@ -1,16 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.debounceFieldProperty = debounceFieldProperty;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _debounce = _interopRequireDefault(require("debounce"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -33,11 +20,14 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+import React from 'react';
+import debounce from 'debounce';
+
 function update(props, name, updates) {
   props.formHandlers.appendField(name, updates);
 }
 
-function debounceFieldProperty() {
+export function debounceFieldProperty() {
   var delayMs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 150;
   var stateName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'value';
   var onChangeName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'onChange';
@@ -67,7 +57,7 @@ function debounceFieldProperty() {
           });
 
           _this.state = _defineProperty({}, stateName, null);
-          _this.update = (0, _debounce.default)(update, delayMs);
+          _this.update = debounce(update, delayMs);
           return _this;
         }
 
@@ -89,12 +79,12 @@ function debounceFieldProperty() {
             var extraProps = {};
             extraProps[stateName] = this.state[stateName];
             extraProps[onChangeName] = this.handleChange;
-            return _react.default.createElement(Component, _extends({}, this.props, extraProps));
+            return React.createElement(Component, _extends({}, this.props, extraProps));
           }
         }]);
 
         return _class2;
-      }(_react.default.PureComponent)
+      }(React.PureComponent)
     );
   };
 }

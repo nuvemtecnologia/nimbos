@@ -1,13 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.validate = validate;
-
-var _recompose = require("recompose");
-
-function validate(namesToRegister, validateFn) {
+import { lifecycle, compose, withState } from 'recompose';
+export function validate(namesToRegister, validateFn) {
   if (typeof validateFn == 'undefined') {
     validateFn = namesToRegister;
 
@@ -16,7 +8,7 @@ function validate(namesToRegister, validateFn) {
     };
   }
 
-  return (0, _recompose.compose)((0, _recompose.withState)('unsubscribe', 'setUnsubscribe'), (0, _recompose.lifecycle)({
+  return compose(withState('unsubscribe', 'setUnsubscribe'), lifecycle({
     componentDidMount: function componentDidMount() {
       var _this = this;
 

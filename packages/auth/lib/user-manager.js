@@ -1,14 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.goToLogin = goToLogin;
-exports.userManager = exports.config = void 0;
-
-var _oidcClient = require("oidc-client");
-
-function goToLogin() {
+import { WebStorageStateStore } from 'oidc-client';
+export function goToLogin() {
   var location = window.location;
   var redirectUri = location.pathname;
 
@@ -26,8 +17,7 @@ function goToLogin() {
     }
   });
 }
-
-var config = {
+export var config = {
   current: {
     client_id: 'NONE',
     redirect_uri: "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(window.location.port ? ":".concat(window.location.port) : '', "/callback"),
@@ -39,7 +29,7 @@ var config = {
     automaticSilentRenew: true,
     filterProtocolClaims: true,
     loadUserInfo: true,
-    userStore: new _oidcClient.WebStorageStateStore({
+    userStore: new WebStorageStateStore({
       store: window.localStorage
     }),
     revokeAccessTokenOnSignout: true,
@@ -47,8 +37,6 @@ var config = {
     popup_redirect_uri: ''
   }
 };
-exports.config = config;
-var userManager = {
+export var userManager = {
   current: null
 };
-exports.userManager = userManager;

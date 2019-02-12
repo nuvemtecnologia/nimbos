@@ -1,22 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _core = require("@nimbos/core");
-
-var _RadioGroupContext = _interopRequireDefault(require("./RadioGroupContext"));
-
-var _RadioGroup = _interopRequireDefault(require("./RadioGroup"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -41,6 +22,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css } from '@nimbos/core';
+import RadioGroupContext from './RadioGroupContext';
+import RadioGroup from './RadioGroup';
+
 var Radio =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -57,7 +44,7 @@ function (_React$PureComponent) {
     value: function renderText() {
       var text = this.props.text;
       if (!text) return null;
-      return _react.default.createElement("span", {
+      return React.createElement("span", {
         className: "n-radio-text-content"
       }, text);
     }
@@ -77,13 +64,13 @@ function (_React$PureComponent) {
           parentName = _this$context.parentName,
           mapItemProps = _this$context.mapItemProps;
       var checked = selectedValue == value;
-      var classList = (0, _core.css)('n-radio', {
+      var classList = css('n-radio', {
         'n-radio-disabled': disabled,
         'n-radio-text': text
       });
-      return _react.default.createElement("label", {
+      return React.createElement("label", {
         className: classList
-      }, _react.default.createElement("input", _extends({
+      }, React.createElement("input", _extends({
         type: "radio",
         disabled: disabled,
         value: value,
@@ -99,19 +86,19 @@ function (_React$PureComponent) {
   }]);
 
   return Radio;
-}(_react.default.PureComponent);
+}(React.PureComponent);
 
-exports.default = Radio;
-Radio.contextType = _RadioGroupContext.default;
+export { Radio as default };
+Radio.contextType = RadioGroupContext;
 Radio.propTypes = {
   /** Dispara a função onChange. */
-  onChange: _propTypes.default.func,
+  onChange: PropTypes.func,
 
   /** Radio se torna desabilitado. */
-  disabled: _propTypes.default.bool,
+  disabled: PropTypes.bool,
 
   /** Label para o Radio. */
-  text: _propTypes.default.bool
+  text: PropTypes.bool
 };
-Radio.Group = _RadioGroup.default;
+Radio.Group = RadioGroup;
 Radio.defaultProps = {};

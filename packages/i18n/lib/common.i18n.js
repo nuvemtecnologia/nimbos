@@ -1,11 +1,6 @@
-"use strict";
+import i18n from './i18n'; //prettier-ignore
 
-var _i18n = _interopRequireDefault(require("./i18n"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//prettier-ignore
-_i18n.default.register("pt-BR", {
+i18n.register("pt-BR", {
   common: {
     //keep alphabetical order
     'abrir_filtro': 'Abrir Filtro',

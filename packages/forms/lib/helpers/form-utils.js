@@ -1,23 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.notEmpty = notEmpty;
-exports.unwrapFormData = unwrapFormData;
-exports.wrapFormData = wrapFormData;
-exports.mapFormSimpleProps = mapFormSimpleProps;
-exports.mapFormProps = mapFormProps;
-exports.onFormChange = onFormChange;
-
-var _lodash = _interopRequireDefault(require("lodash.uniq"));
-
-var _lodash2 = _interopRequireDefault(require("lodash.concat"));
-
-var _recompose = require("recompose");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -26,11 +6,13 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function notEmpty(value) {
+import uniq from 'lodash.uniq';
+import concat from 'lodash.concat';
+import { shallowEqual } from 'recompose';
+export function notEmpty(value) {
   return typeof value !== 'undefined';
 }
-
-function unwrapFormData(data) {
+export function unwrapFormData(data) {
   var values = {};
   var errors = {};
   var touched = {};
@@ -50,8 +32,7 @@ function unwrapFormData(data) {
     fields: fields
   };
 }
-
-function wrapFormData(props) {
+export function wrapFormData(props) {
   var _props$values = props.values,
       values = _props$values === void 0 ? {} : _props$values,
       _props$errors = props.errors,
@@ -61,7 +42,7 @@ function wrapFormData(props) {
       _props$fields = props.fields,
       fields = _props$fields === void 0 ? {} : _props$fields;
   var data = {};
-  var names = (0, _lodash.default)((0, _lodash2.default)(Object.keys(values || {}), Object.keys(errors || {}), Object.keys(touched || {}), Object.keys(fields || {})));
+  var names = uniq(concat(Object.keys(values || {}), Object.keys(errors || {}), Object.keys(touched || {}), Object.keys(fields || {})));
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -92,8 +73,7 @@ function wrapFormData(props) {
 
   return data;
 }
-
-function mapFormSimpleProps(props) {
+export function mapFormSimpleProps(props) {
   var data = props.data,
       onChange = props.onChange,
       p = _objectWithoutProperties(props, ["data", "onChange"]);
@@ -109,8 +89,7 @@ function mapFormSimpleProps(props) {
     onChange: rawOnChange
   });
 }
-
-function mapFormProps(props) {
+export function mapFormProps(props) {
   var values = props.values,
       errors = props.errors,
       touched = props.touched,
@@ -140,24 +119,23 @@ function mapFormProps(props) {
     onChange: onChange
   });
 }
-
-function onFormChange(prevData, events) {
+export function onFormChange(prevData, events) {
   return function (data) {
     var nextData = unwrapFormData(data);
 
-    if (!(0, _recompose.shallowEqual)(prevData.values || {}, nextData.values || {})) {
+    if (!shallowEqual(prevData.values || {}, nextData.values || {})) {
       events.onChangeValues(nextData.values);
     }
 
-    if (!(0, _recompose.shallowEqual)(prevData.errors || {}, nextData.errors || {})) {
+    if (!shallowEqual(prevData.errors || {}, nextData.errors || {})) {
       events.onChangeErrors(nextData.errors);
     }
 
-    if (!(0, _recompose.shallowEqual)(prevData.touched || {}, nextData.touched || {})) {
+    if (!shallowEqual(prevData.touched || {}, nextData.touched || {})) {
       events.onChangeTouched(nextData.touched);
     }
 
-    if (!(0, _recompose.shallowEqual)(prevData.fields || {}, nextData.fields || {})) {
+    if (!shallowEqual(prevData.fields || {}, nextData.fields || {})) {
       events.onChangeFields(nextData.fields);
     }
   };
