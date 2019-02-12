@@ -140,7 +140,7 @@ function (_React$PureComponent) {
 exports.default = Text;
 Text.propTypes = {
   /** Rótulo do input. */
-  label: _propTypes.default.PropTypes.oneOfType([_propTypes.default.string, _propTypes.default.bool]),
+  label: _propTypes.default.PropTypes.oneOfType([_propTypes.default.string, _propTypes.default.bool, _propTypes.default.node]),
 
   /** Placeholder do input. */
   placeholder: _propTypes.default.string,
