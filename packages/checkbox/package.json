@@ -1,6 +1,6 @@
 {
   "name": "@nimbos/checkbox",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "html input checkbox",
   "keywords": [
     "html",
@@ -11,7 +11,7 @@
   "homepage": "https://jossanpetrenko.github.io/spa-framework/tree/master/packages/checkbox#readme",
   "license": "ISC",
   "dependencies": {
-    "@nimbos/core": "^0.1.5",
+    "@nimbos/core": "^0.1.6",
     "@nimbos/styles": "^0.1.16"
   },
   "main": "lib/index.js",
