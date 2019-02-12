@@ -50,9 +50,7 @@ function (_React$PureComponent) {
     _classCallCheck(this, Text);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
-    _this.state = {
-      id: props.id || "Text-".concat(uuid())
-    };
+    _this.state = {};
     return _this;
   }
 

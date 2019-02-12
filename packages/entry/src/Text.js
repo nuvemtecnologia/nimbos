@@ -6,7 +6,7 @@ import Label from './Label';
 export default class Text extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { id: props.id || `Text-${uuid()}` };
+    this.state = {};
   }
 
   handleIcon(icon, onClick, orientation = 'right') {
