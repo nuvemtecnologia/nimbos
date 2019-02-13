@@ -91,6 +91,7 @@ function (_React$PureComponent) {
         onClick: function onClick() {
           return changeValue(value, !checked);
         },
+        onChange: function onChange() {},
         checked: checked,
         "data-test-id": "checkbox-".concat(parentName || 'unique', "-").concat(value)
       }, (mapItemProps || function () {
@@ -112,7 +113,7 @@ Checkbox.propTypes = {
   disabled: _propTypes.default.bool,
 
   /** Label para o Checkbox. */
-  text: _propTypes.default.bool
+  text: _propTypes.default.string
 };
 Checkbox.Group = _CheckboxGroup.default;
 Checkbox.defaultProps = {};

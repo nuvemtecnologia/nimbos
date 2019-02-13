@@ -30,6 +30,7 @@ export default class Checkbox extends React.PureComponent {
           disabled={disabled}
           value={value}
           onClick={() => changeValue(value, !checked)}
+          onChange={() => {}}
           checked={checked}
           data-test-id={`checkbox-${parentName || 'unique'}-${value}`}
           {...(mapItemProps || (() => ({})))(this.props)}
@@ -51,7 +52,7 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
 
   /** Label para o Checkbox. */
-  text: PropTypes.bool
+  text: PropTypes.string
 };
 
 Checkbox.Group = CheckboxGroup;
