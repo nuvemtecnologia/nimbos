@@ -29,6 +29,7 @@ export default class Radio extends React.PureComponent {
           disabled={disabled}
           value={value}
           onClick={() => changeValue(value)}
+          onChange={() => {}}
           checked={checked}
           data-test-id={`radio-${parentName || 'unique'}-${value}`}
           {...(mapItemProps || (() => ({})))(this.props)}
@@ -50,7 +51,7 @@ Radio.propTypes = {
   disabled: PropTypes.bool,
 
   /** Label para o Radio. */
-  text: PropTypes.bool
+  text: PropTypes.string
 };
 
 Radio.Group = RadioGroup;

@@ -90,6 +90,7 @@ function (_React$PureComponent) {
         onClick: function onClick() {
           return changeValue(value);
         },
+        onChange: function onChange() {},
         checked: checked,
         "data-test-id": "radio-".concat(parentName || 'unique', "-").concat(value)
       }, (mapItemProps || function () {
@@ -111,7 +112,7 @@ Radio.propTypes = {
   disabled: _propTypes.default.bool,
 
   /** Label para o Radio. */
-  text: _propTypes.default.bool
+  text: _propTypes.default.string
 };
 Radio.Group = _RadioGroup.default;
 Radio.defaultProps = {};
